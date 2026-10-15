@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Faça o teste e receba a ficha de um(a) educador(a) que mudou a forma como o mundo aprende. 15 questões, 50 educadores que mudaram o mundo.">
+<meta property="og:title" content="Que Educador te Inspira?">
+<meta property="og:description" content="Faça o teste e descubra qual dos 50 educadores que mudaram o mundo mais se aproxima do seu jeito de ensinar.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#6b1d2f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%236b1d2f'/%3E%3Cpath d='M32 12l14 20-14 20-14-20z' fill='none' stroke='%23d9b45a' stroke-width='3'/%3E%3C/svg%3E">
+<title>Que Educador te Inspira?</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+/* Layout: caderneta escolar clássica. Coluna única de leitura com filetes duplos, ornamentos em losango
+   de latão, e o resultado como diploma com a nota circulada a caneta vermelha. */
+:root {
+  --paper: #f8f2e6;
+  --card: #fffcf5;
+  --fg: #271d1d;
+  --muted: #6a5a55;
+  --ink: #6b1d2f;
+  --brass: #a67a1c;
+  --ghost: #e6d3cf;
+  --rule: #dfd0b9;
+  --pen: #c0392b;
+  --on-ink: #fffcf5;
+  --display: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
+  --body: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --label: "Cinzel", "Trajan Pro", Georgia, serif;
+  --hand: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1e1317; --card: #2a1b21; --fg: #f4ece0; --muted: #c0aeaa; --ink: #eab2bb; --brass: #dcb25c;
+    --ghost: #3d2a31; --rule: #4b343b; --pen: #ff8c79; --on-ink: #1e1317; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1e1317; --card: #2a1b21; --fg: #f4ece0; --muted: #c0aeaa; --ink: #eab2bb; --brass: #dcb25c;
+  --ghost: #3d2a31; --rule: #4b343b; --pen: #ff8c79; --on-ink: #1e1317; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--fg);
+  font: 400 1rem/1.7 var(--body);
+  padding-block: 1.25rem 3rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 44rem; margin: 0 auto; }
+[data-view] { display: block; }
+[data-view][hidden], #refs[hidden] { display: none !important; }
+
+.label { font-family: var(--label); font-weight: 500; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.topline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1rem; border-bottom: 4px double var(--ink); padding-bottom: .75rem; margin-bottom: 2rem; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; color: var(--ink); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.7rem, 11.5vw, 4.5rem); line-height: .95; letter-spacing: -.012em; }
+h1 em { font-style: italic; font-weight: 500; color: var(--brass); }
+h2 { font-size: clamp(1.95rem, 7.2vw, 2.7rem); line-height: 1.05; }
+h3 { font-size: 1.55rem; line-height: 1.15; display: flex; align-items: center; gap: .7rem; }
+h3::before { content: ""; flex: none; width: 8px; height: 8px; background: var(--brass); transform: rotate(45deg); }
+.card h3::before { display: none; }
+h1:focus, h2:focus { outline: none; }
+p { margin: 0; }
+.rs { width: 5.5rem; border-top: 4px double var(--brass); margin-top: 1.3rem; }
+.lead { max-width: 35rem; margin-top: 1.4rem; font-size: 1.08rem; }
+.lead.drop::first-letter { font: 700 3.6em/.8 var(--display); color: var(--ink); float: left; padding: .06em .1em 0 0; }
+.note { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+
+.field { margin-top: 2rem; display: grid; gap: .35rem; max-width: 24rem; }
+.field input { font: 400 1.1rem var(--body); color: var(--fg); background: transparent; border: 0; border-bottom: 1.5px solid var(--ink); padding: .45rem .1rem; border-radius: 0; width: 100%; }
+.field input:focus-visible { outline: 2px solid var(--brass); outline-offset: 4px; }
+.field input::placeholder { color: var(--muted); font-style: italic; opacity: .85; }
+
+.btn { font: 600 .8rem var(--label); letter-spacing: .14em; text-transform: uppercase; background: var(--ink); color: var(--on-ink); border: 1.5px solid var(--ink); padding: .95rem 1.5rem; border-radius: 2px; cursor: pointer; min-height: 48px; }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn:hover { box-shadow: inset 0 0 0 2px var(--brass); }
+.btn:focus-visible, .opt:focus-visible, .linkbtn:focus-visible, summary:focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+.btn[disabled] { opacity: .4; cursor: default; box-shadow: none; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.1rem; }
+
+/* Pergunta */
+.ruler { display: flex; gap: 4px; margin: 0 0 1.6rem; padding: 0; list-style: none; }
+.ruler li { flex: 1; height: 6px; background: var(--rule); }
+.ruler li.done { background: var(--ink); }
+.ruler li.now { background: var(--brass); }
+.qhead { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .7rem; }
+.opts { display: grid; gap: .8rem; margin-top: 1.6rem; }
+.opt { display: grid; grid-template-columns: 2.1rem minmax(0, 1fr); gap: .9rem; align-items: start; text-align: left; width: 100%; font: inherit; color: var(--fg); background: var(--card); border: 1px solid var(--rule); border-radius: 2px; padding: .95rem 1.05rem; cursor: pointer; min-height: 56px; }
+.opt:hover { border-color: var(--ink); }
+.opt-l { font: 600 .85rem var(--label); width: 2rem; height: 2rem; display: grid; place-items: center; border: 1px solid var(--brass); border-radius: 50%; color: var(--ink); text-transform: uppercase; }
+.opt.sel { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.opt.sel .opt-l { background: var(--ink); border-color: var(--ink); color: var(--on-ink); }
+
+/* Diploma */
+.ficha { position: relative; background: var(--card); border: 5px double var(--ink); outline: 1px solid var(--brass); outline-offset: -15px; padding: 2.1rem 1.9rem 2.2rem; box-shadow: 0 18px 30px -22px rgba(0, 0, 0, .45); }
+.ficha-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .3rem 1rem; padding-bottom: .7rem; margin-bottom: 1.3rem; border-bottom: 1px solid var(--rule); }
+.top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.nome { font-size: clamp(2.5rem, 11vw, 4rem); line-height: .98; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.stamp { border: 2.5px solid var(--pen); border-radius: 52% 48% 55% 45% / 48% 55% 45% 52%; color: var(--pen); padding: .55rem 1.1rem .45rem; transform: rotate(-7deg); text-align: center; margin: .3rem .5rem .2rem 0; flex: none; }
+.stamp b { display: block; font: 700 2.6rem/1 var(--hand); }
+.stamp span { font: 700 1.05rem/1 var(--hand); }
+.meta { margin-top: .6rem; color: var(--muted); font-style: italic; }
+.ficha dl { margin: 1.4rem 0 0; display: grid; gap: 1.1rem; }
+.ficha dt { font: 500 .72rem var(--label); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.ficha dd { margin: .25rem 0 0; }
+.conc { font: italic 600 1.5rem/1.2 var(--display); color: var(--ink); }
+
+.sec { margin-top: 2.6rem; display: grid; gap: 1rem; }
+.sec > ul:not(.near) { margin: 0; padding: 0; list-style: none; display: grid; gap: .6rem; }
+.sec > ul:not(.near) li { position: relative; padding-left: 1.3rem; }
+.sec > ul:not(.near) li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; background: var(--brass); transform: rotate(45deg); }
+.chart { width: 100%; max-width: 27rem; height: auto; display: block; margin-inline: auto; }
+.chart .ring { fill: none; stroke: var(--rule); stroke-width: 1; }
+.chart .ring.mid { stroke: var(--brass); stroke-width: 1.2; stroke-dasharray: 3 3; }
+.chart .axis { stroke: var(--rule); stroke-width: 1; }
+.chart .rl { fill: var(--fg); font: 700 13px var(--body); }
+.chart .rt { fill: var(--muted); font: 500 9.5px var(--label); letter-spacing: .08em; }
+.chart .me { fill: var(--ink); fill-opacity: .2; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; }
+.chart .ed { fill: none; stroke: var(--pen); stroke-width: 2.5; stroke-dasharray: 7 4; stroke-linejoin: round; }
+.chart .mp { fill: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.4rem; font-size: .95rem; }
+.legend span { display: inline-flex; align-items: center; gap: .5rem; }
+.legend i { width: 1.6rem; height: 0; border-top: 3px solid var(--ink); display: inline-block; }
+.legend i.d { border-top: 3px dashed var(--pen); }
+
+details { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: .9rem 0; }
+summary { cursor: pointer; font: 700 1.25rem var(--display); color: var(--ink); }
+.dims { list-style: none; padding: 0; margin: 1.1rem 0 0; display: grid; gap: 1.1rem; }
+.dims li { display: grid; gap: .3rem; }
+.dims strong { font: 700 1.15rem var(--display); color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chip { font: 500 .68rem var(--label); letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--rule); padding: .2rem .55rem; color: var(--muted); }
+.chip.me { border-color: var(--ink); color: var(--ink); }
+
+.near { list-style: none; margin: 0; padding: 0; display: grid; }
+.near li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .1rem 1rem; padding: .9rem 0; border-bottom: 1px solid var(--rule); }
+.near b { font: 700 1.3rem var(--display); color: var(--ink); }
+.near .pc { font: 700 1.7rem var(--hand); color: var(--pen); grid-row: span 2; align-self: center; }
+.near small { color: var(--muted); font-size: .88rem; }
+
+textarea { width: 100%; font: 400 .92rem/1.55 var(--body); color: var(--fg); background: var(--card); border: 1px solid var(--rule); border-radius: 2px; padding: .75rem; resize: vertical; }
+.msg { min-height: 1.4rem; font-size: .9rem; color: var(--muted); }
+
+/* Catálogo */
+.search { display: grid; gap: .35rem; margin-top: 1.4rem; max-width: 26rem; }
+.search input { font: 400 1rem var(--body); color: var(--fg); background: var(--card); border: 1px solid var(--ink); border-radius: 2px; padding: .75rem .85rem; width: 100%; }
+.search input:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.grid { display: grid; gap: 1.2rem; margin-top: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+.card { background: var(--card); border: 1px solid var(--rule); border-top: 5px double var(--ink); padding: 1.05rem 1.1rem 1.2rem; display: grid; gap: .55rem; align-content: start; min-width: 0; }
+.card h3 { font-size: 1.45rem; overflow-wrap: anywhere; display: block; }
+.card .cc { font: italic 600 1.1rem var(--display); color: var(--brass); }
+.card p { font-size: .93rem; line-height: 1.6; }
+.card .st { color: var(--muted); font-size: .85rem; font-style: italic; }
+.linkbtn { background: none; border: 0; padding: .2rem 0; font: 600 1rem var(--display); color: var(--ink); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; min-height: 44px; }
+
+#refs { margin-top: 3.4rem; border-top: 4px double var(--ink); padding-top: 1.5rem; display: grid; gap: .9rem; }
+#refs ol { margin: 0; padding-left: 1.4rem; display: grid; gap: .6rem; font-size: .92rem; line-height: 1.55; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Retrato, leituras e links */
+.idbox { display: flex; flex-wrap: wrap; align-items: center; gap: 1.1rem 1.3rem; flex: 1 1 18rem; min-width: 0; }
+.idtxt { min-width: 0; flex: 1 1 12rem; }
+.retrato { flex: none; width: 6.4rem; height: 8rem; border-radius: 50%; border: 3px double var(--ink); outline: 1px solid var(--brass); outline-offset: -9px; background: var(--ghost); display: grid; place-items: center; }
+.retrato span { font: italic 700 2.7rem/1 var(--display); color: var(--ink); }
+.ficha .meta { margin-top: .5rem; }
+.obras { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+.obras li { position: relative; padding-left: 1.15rem; font-size: .95rem; line-height: 1.5; }
+.obras li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; background: var(--brass); transform: rotate(45deg); }
+.card .st { font: 500 .72rem var(--label); letter-spacing: .14em; text-transform: uppercase; font-style: normal; margin-top: .3rem; }
+
+/* filtros do catálogo */
+.filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .9rem 1rem; margin-top: 1.4rem; align-items: end; }
+.filters .f { display: grid; gap: .35rem; min-width: 0; }
+.filters .f-wide { grid-column: 1 / -1; max-width: 30rem; }
+.filters input, .filters select { font: 400 1rem var(--body); color: var(--fg); background: var(--card); border: 1px solid var(--ink); border-radius: 2px; padding: .7rem .8rem; width: 100%; min-height: 2.9rem; }
+.filters input:focus-visible, .filters select:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.filters .f-btn .btn { width: 100%; min-height: 2.9rem; padding-block: .6rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+.tag { font: 500 .68rem var(--label); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); background: transparent; padding: .22rem .5rem; border-radius: 2px; line-height: 1.3; }
+.bio p, .bio-d .bio p { margin: 0 0 .8rem; line-height: 1.7; }
+.bio p:last-child { margin-bottom: 0; }
+.bio-d { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: .2rem 0; }
+.bio-d summary { cursor: pointer; padding: .6rem 0; font: 500 .74rem var(--label); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.bio-d summary:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+.bio-d .bio { padding: .3rem 0 .6rem; }
+.bio-d .bio p { font-size: .93rem; }
+
+</style>
+</head>
+<body>
+
+
+<div class="wrap" id="app">
+
+  <section id="v-intro" data-view>
+    <div class="topline"><span class="label">Atividade de 15 questões</span><span class="label">50 educadores que mudaram o mundo</span></div>
+    <h1 tabindex="-1" data-focus>Que Educador te <em>Inspira</em>?</h1>
+    <div class="rs" aria-hidden="true"></div>
+    <p class="lead drop">Faça o teste e receba a ficha de um(a) educador(a) que mudou a forma como o mundo aprende.</p>
+    <div class="field">
+      <label class="label" for="nome">Seu nome (opcional)</label>
+      <input id="nome" type="text" maxlength="40" autocomplete="given-name" placeholder="Como devemos chamar você?">
+    </div>
+    <div class="actions">
+      <button class="btn" id="start" type="button">Começar</button>
+      <button class="btn ghost" id="to-cat" type="button">Ver os 50 educadores</button>
+    </div>
+  </section>
+
+  <section id="v-quiz" data-view hidden>
+    <ol class="ruler" id="ruler" aria-hidden="true"></ol>
+    <div class="qhead"><span class="label" id="qnum"></span></div>
+    <h2 id="qtext" tabindex="-1" data-focus></h2>
+    <div class="opts" id="opts"></div>
+    <div class="actions"><button class="btn ghost" id="back" type="button">Voltar</button></div>
+  </section>
+
+  <section id="v-result" data-view hidden></section>
+
+  <section id="v-catalog" data-view hidden>
+    <div class="topline"><span class="label">Catálogo</span><span class="label">Busca e filtros</span></div>
+    <h2 tabindex="-1" data-focus>Os 50 educadores</h2>
+    <div class="rs" aria-hidden="true"></div>
+    <p class="lead" style="font-size:1.02rem">Pessoas de épocas, países e correntes diferentes, unidas pela ideia de que educar é ampliar a liberdade de quem aprende.</p>
+    <div class="filters" role="search">
+      <div class="f f-wide">
+        <label class="label" for="busca">Buscar por nome, país ou ideia</label>
+        <input id="busca" type="search" placeholder="Ex.: Brasil, arte, Montessori" autocomplete="off">
+      </div>
+      <div class="f"><label class="label" for="f-eixo">Eixo pedagógico</label><select id="f-eixo"></select></div>
+      <div class="f"><label class="label" for="f-reg">Região de atuação</label><select id="f-reg"></select></div>
+      <div class="f"><label class="label" for="f-ep">Época de nascimento</label><select id="f-ep"></select></div>
+      <div class="f"><label class="label" for="f-ord">Ordenar por</label><select id="f-ord"></select></div>
+      <div class="f f-btn"><button class="btn ghost" id="f-clear" type="button">Limpar filtros</button></div>
+    </div>
+    <p class="note" id="cat-count" style="margin-top:.7rem" aria-live="polite"></p>
+    <div class="grid" id="cat-list"></div>
+    <div class="actions"><button class="btn ghost" id="cat-back" type="button">Voltar</button></div>
+  </section>
+
+  <footer id="refs">
+    <h2 style="font-size:1.7rem">Para aprofundar</h2>
+    <p class="note">Dez obras de referência para começar. As edições brasileiras variam, por isso confira a mais recente na sua biblioteca.</p>
+    <ol id="refs-list"></ol>
+  </footer>
+</div>
+
+<noscript><p style="padding:1rem">Este quiz precisa de JavaScript para funcionar.</p></noscript>
+
+<script>
+/* Dados e lógica do quiz. Ordem das dimensões: A S P C T E M I */
+var DIMS = [
+  { k: 'A', nome: 'Autonomia', curto: 'Autonomia', def: 'Quanto você confia na liberdade e no protagonismo do estudante para escolher o que e como aprender.' },
+  { k: 'S', nome: 'Transformação social', curto: 'Transformação', def: 'Quanto você entende a educação como ato político, voltado à consciência crítica e à justiça.' },
+  { k: 'P', nome: 'Prática', curto: 'Prática', def: 'Quanto você aposta em aprender fazendo, com projetos, experimentos e experiências reais.' },
+  { k: 'C', nome: 'Coletivo', curto: 'Coletivo', def: 'Quanto você valoriza a cooperação, o diálogo e a comunidade como motores da aprendizagem.' },
+  { k: 'T', nome: 'Ciência e tecnologia', curto: 'Ciência', def: 'Quanto você valoriza a investigação, o método científico, os dados e as ferramentas técnicas.' },
+  { k: 'E', nome: 'Arte e imaginação', curto: 'Arte', def: 'Quanto você valoriza a arte, o corpo, o afeto e a criação como formas de conhecer.' },
+  { k: 'M', nome: 'Mediação e método', curto: 'Método', def: 'Quanto você valoriza estrutura, sequência e a direção intencional de quem ensina.' },
+  { k: 'I', nome: 'Cuidado e inclusão', curto: 'Inclusão', def: 'Quanto você coloca o acolhimento das diferenças e dos direitos de cada pessoa no centro.' }
+];
+
+var MOTIVOS = {
+  A: ['Você confia no protagonismo do estudante e na liberdade de escolher caminhos de aprendizagem.', 'Você valoriza uma direção firme de quem ensina e um percurso bem conduzido.'],
+  S: ['Para você, educar também é transformar a sociedade e formar consciência crítica.', 'Você coloca o foco no desenvolvimento de cada pessoa mais do que em agendas sociais amplas.'],
+  P: ['Você aprende e ensina fazendo: projetos, experimentos e experiências reais.', 'Você valoriza a leitura, a conversa e a reflexão como caminhos de aprender.'],
+  C: ['Você vê a aprendizagem como ato coletivo, feito de cooperação, diálogo e comunidade.', 'Você respeita o ritmo individual e o espaço próprio de cada pessoa.'],
+  T: ['Você tem olhar investigativo: gosta de hipóteses, dados, ferramentas e tecnologia.', 'Você desconfia de soluções técnicas e prefere a palavra, a presença e a relação humana.'],
+  E: ['Você leva a sério a arte, o corpo e a imaginação como formas de conhecer.', 'Você dá prioridade ao raciocínio lógico e à clareza dos conceitos.'],
+  M: ['Você acredita em mediação intencional: estrutura, sequência e apoio na medida certa.', 'Você desconfia de currículos rígidos e confia mais na espontaneidade.'],
+  I: ['Você coloca o cuidado e a inclusão no centro: ninguém pode ficar para trás.', 'Você pensa a educação para a maioria, sem ênfase especial em adaptações individuais.']
+};
+
+/* v = [A,S,P,C,T,E,M,I], valores de -2 a 2 */
+var EDUCATORS = [
+  { n: 'Paulo Freire', anos: '1921 a 1997', pais: 'Brasil', conceito: 'Educação problematizadora',
+    resumo: 'Educador pernambucano que criou uma pedagogia em que ensinar é dialogar com a realidade de quem aprende. Contra a educação bancária, defendeu a leitura crítica do mundo como caminho para a libertação.',
+    start: 'Pedagogia do Oprimido', v: [1, 2, 1, 2, -1, 0, 1, 1] },
+  { n: 'Maria Montessori', anos: '1870 a 1952', pais: 'Itália', conceito: 'Ambiente preparado',
+    resumo: 'Médica e educadora italiana que observou crianças com método científico e criou materiais e ambientes em que elas aprendem com autonomia. A Casa dei Bambini, aberta em 1907, inspira escolas no mundo inteiro.',
+    start: 'A Mente Absorvente', v: [2, 0, 2, -1, 1, 0, 2, 1] },
+  { n: 'John Dewey', anos: '1859 a 1952', pais: 'Estados Unidos', conceito: 'Aprender pela experiência',
+    resumo: 'Filósofo que defendeu a escola como uma comunidade democrática em miniatura, em que se aprende resolvendo problemas reais. Sua ideia de educação como reconstrução da experiência marcou o movimento da Escola Nova.',
+    start: 'Democracia e Educação', v: [1, 1, 2, 2, 1, 0, 1, 0] },
+  { n: 'Lev Vygotsky', anos: '1896 a 1934', pais: 'Bielorrússia e União Soviética', conceito: 'Zona de desenvolvimento proximal',
+    resumo: 'Psicólogo que mostrou que aprendemos primeiro com os outros e só depois por conta própria. Com a zona de desenvolvimento proximal, deu base para pensar o ensino como mediação cultural e social.',
+    start: 'A Formação Social da Mente', v: [0, 1, 0, 2, 0, 1, 2, 2] },
+  { n: 'Jean Piaget', anos: '1896 a 1980', pais: 'Suíça', conceito: 'Construtivismo',
+    resumo: 'Biólogo e epistemólogo que estudou como as crianças constroem o conhecimento por etapas, agindo sobre o mundo. Mostrou que o erro revela a lógica de quem pensa e que ensinar exige respeitar o momento de cada um.',
+    start: 'Seis Estudos de Psicologia', v: [2, -1, 1, 0, 2, -1, 1, 0] },
+  { n: 'Anísio Teixeira', anos: '1900 a 1971', pais: 'Brasil', conceito: 'Escola pública para todos',
+    resumo: 'Baiano que trouxe as ideias de Dewey ao Brasil e lutou pela escola pública, laica, gratuita e de qualidade. Em Salvador, criou o Centro Educacional Carneiro Ribeiro, a Escola Parque, que unia ensino, arte, trabalho e convivência.',
+    start: 'Educação Não É Privilégio', v: [1, 1, 1, 2, 1, 0, 2, 1] },
+  { n: 'Célestin Freinet', anos: '1896 a 1966', pais: 'França', conceito: 'Aula-passeio e imprensa escolar',
+    resumo: 'Professor francês que levou a vida para dentro da escola com a imprensa escolar, a correspondência entre turmas, a aula-passeio e a cooperativa de estudantes. Defendia o trabalho como princípio educativo e a cooperação como método.',
+    start: 'Pedagogia do Bom Senso', v: [1, 1, 2, 2, 1, 1, 0, 1] },
+  { n: 'Loris Malaguzzi', anos: '1920 a 1994', pais: 'Itália', conceito: 'As cem linguagens da criança',
+    resumo: 'Idealizador da abordagem de Reggio Emilia, nascida das escolas populares do pós-guerra. Para ele, a criança é protagonista e se expressa por cem linguagens; o ambiente, as famílias e a documentação pedagógica são parceiros do ensino.',
+    start: 'As Cem Linguagens da Criança', v: [1, 0, 1, 2, 0, 2, 0, 2] },
+  { n: 'bell hooks', anos: '1952 a 2021', pais: 'Estados Unidos', conceito: 'Pedagogia engajada',
+    resumo: 'Escritora e professora que propôs uma pedagogia engajada, em que a sala de aula é lugar de liberdade, prazer e transgressão. Articulou raça, gênero e classe para perguntar quem pode falar e ser escutado na escola.',
+    start: 'Ensinando a Transgredir', v: [1, 2, 0, 1, -1, 1, -1, 2] },
+  { n: 'A. S. Neill', anos: '1883 a 1973', pais: 'Reino Unido', conceito: 'Liberdade com autogestão',
+    resumo: 'Fundador da escola Summerhill, na Inglaterra, onde a frequência às aulas é voluntária e as regras são decididas em assembleias em que estudantes e adultos têm o mesmo voto. Apostou na felicidade e na liberdade como base do aprender.',
+    start: 'Liberdade sem Medo (Summerhill)', v: [2, 0, 0, 1, -1, 2, -2, 1] },
+  { n: 'Ivan Illich', anos: '1926 a 2002', pais: 'Áustria e México', conceito: 'Desescolarização',
+    resumo: 'Pensador austríaco radicado na América Latina que questionou a instituição escolar de seu tempo por confundir ensino com aprendizagem. Propôs redes de aprendizagem abertas, em que as pessoas trocam saberes sem passar por currículos obrigatórios.',
+    start: 'Sociedade sem Escolas', v: [2, 2, 0, 1, 0, 0, -2, 0] },
+  { n: 'Henry Giroux', anos: 'nascido em 1943', pais: 'Estados Unidos', conceito: 'Pedagogia crítica',
+    resumo: 'Um dos principais nomes da pedagogia crítica, vê professores como intelectuais transformadores. Defende que a escola é espaço de disputa política e cultural, e que educar é formar cidadãos capazes de resistir à opressão.',
+    start: 'Os Professores como Intelectuais', v: [0, 2, -1, 1, -1, 1, 0, 1] },
+  { n: 'Darcy Ribeiro', anos: '1922 a 1997', pais: 'Brasil', conceito: 'Escola de tempo integral',
+    resumo: 'Antropólogo, educador e político que idealizou os Centros Integrados de Educação Pública, os CIEPs, escolas de tempo integral com ensino, alimentação, esporte e cultura. Também foi um dos fundadores da Universidade de Brasília.',
+    start: 'A Universidade Necessária', v: [0, 2, 0, 1, 0, 1, 1, 2] },
+  { n: 'Magda Soares', anos: '1932 a 2023', pais: 'Brasil', conceito: 'Alfabetizar letrando',
+    resumo: 'Professora mineira que difundiu no Brasil o conceito de letramento e defendeu que alfabetizar é ensinar o sistema de escrita sem perder de vista seus usos sociais. Seu trabalho transformou a formação de alfabetizadores.',
+    start: 'Letramento: um Tema em Três Gêneros', v: [0, 1, 0, 0, 1, 1, 2, 1] },
+  { n: 'Emilia Ferreiro', anos: 'nascida em 1937', pais: 'Argentina', conceito: 'Psicogênese da escrita',
+    resumo: 'Psicolinguista argentina, discípula de Piaget, que mostrou que as crianças formulam hipóteses sobre a escrita muito antes de serem alfabetizadas formalmente. Com Ana Teberosky, mudou o modo de ver o erro e o ensino da leitura e da escrita.',
+    start: 'Psicogênese da Língua Escrita', v: [2, 1, 0, 1, 1, 0, 1, 1] },
+  { n: 'Seymour Papert', anos: '1928 a 2016', pais: 'África do Sul e Estados Unidos', conceito: 'Construcionismo',
+    resumo: 'Matemático que trabalhou com Piaget e criou a linguagem Logo, para que crianças programassem a tartaruga e aprendessem matemática construindo. Com o construcionismo, defendeu que se aprende melhor fabricando objetos significativos.',
+    start: 'A Máquina das Crianças', v: [2, 0, 2, 0, 2, 1, -1, 0] },
+  { n: 'Jerome Bruner', anos: '1915 a 2016', pais: 'Estados Unidos', conceito: 'Currículo em espiral e andaimes',
+    resumo: 'Psicólogo cognitivo que defendeu a aprendizagem por descoberta e o currículo em espiral, no qual os mesmos temas retornam com profundidade crescente. Difundiu também a ideia de andaime, o apoio provisório oferecido por quem ensina.',
+    start: 'O Processo da Educação', v: [1, 0, 1, 1, 2, 1, 2, 0] },
+  { n: 'Howard Gardner', anos: 'nascido em 1943', pais: 'Estados Unidos', conceito: 'Inteligências múltiplas',
+    resumo: 'Psicólogo de Harvard que propôs que a inteligência não é uma só, mas um conjunto de capacidades, como a linguística, a musical, a corporal e a interpessoal. A teoria ampliou o debate sobre a diversidade de talentos, embora seja discutida pela pesquisa empírica.',
+    start: 'Estruturas da Mente', v: [1, 0, 1, 0, 1, 2, 1, 2] },
+  { n: 'Janusz Korczak', anos: '1878 a 1942', pais: 'Polônia', conceito: 'Direitos da criança',
+    resumo: 'Médico e educador polonês que dirigiu um orfanato em Varsóvia com parlamento e tribunal de crianças. Defendeu que a criança é pessoa com direito ao respeito. Morreu em 1942, ao acompanhar as crianças do orfanato ao campo de Treblinka.',
+    start: 'O Direito da Criança ao Respeito', v: [2, 1, 0, 2, -1, 1, 0, 2] },
+  { n: 'Johann Pestalozzi', anos: '1746 a 1827', pais: 'Suíça', conceito: 'Cabeça, coração e mãos',
+    resumo: 'Educador suíço que dedicou a vida a crianças pobres e órfãs, defendendo uma educação que une intelecto, afeto e trabalho manual. Sua ênfase na intuição e na observação influenciou toda a pedagogia moderna.',
+    start: 'Como Gertrudes Ensina seus Filhos', v: [1, 1, 2, 1, 0, 1, 1, 2] },
+  { n: 'Friedrich Fröbel', anos: '1782 a 1852', pais: 'Alemanha', conceito: 'Jardim de infância',
+    resumo: 'Criador do primeiro jardim de infância, o Kindergarten, em 1837. Via no brincar a atividade central da infância e desenhou materiais, os dons, para que as crianças explorassem formas e relações.',
+    start: 'A Educação do Homem', v: [1, 0, 2, 1, 0, 2, 2, 0] },
+  { n: 'Jean-Jacques Rousseau', anos: '1712 a 1778', pais: 'Suíça e França', conceito: 'Educação natural',
+    resumo: 'Filósofo que rompeu com a ideia de criança como adulto em miniatura, defendendo que a educação respeite as fases da infância e o contato com a natureza. O Emílio é considerado um marco inicial da pedagogia moderna.',
+    start: 'Emílio ou Da Educação', v: [2, 1, 2, -2, 0, 1, -1, 0] },
+  { n: 'Ovide Decroly', anos: '1871 a 1932', pais: 'Bélgica', conceito: 'Centros de interesse',
+    resumo: 'Médico belga que começou trabalhando com crianças com deficiência e criou os centros de interesse, em que o ensino parte das necessidades e curiosidades da criança. Propôs o método global de leitura, que parte de palavras e frases inteiras.',
+    start: 'Textos sobre a École de l\'Ermitage, escola que fundou em 1907', v: [1, 0, 2, 1, 1, 0, 2, 2] },
+  { n: 'Francisco Ferrer i Guàrdia', anos: '1859 a 1909', pais: 'Espanha', conceito: 'Escola Moderna',
+    resumo: 'Pedagogo catalão que fundou em Barcelona, em 1901, a Escola Moderna, laica, racionalista e baseada na ciência, aberta a meninos e meninas de todas as classes. Foi fuzilado em 1909, após um processo hoje considerado injusto.',
+    start: 'A Escola Moderna', v: [1, 2, 0, 1, 2, -1, 1, 0] },
+  { n: 'Lorenzo Milani', anos: '1923 a 1967', pais: 'Itália', conceito: 'Escola de Barbiana',
+    resumo: 'Padre toscano que criou a escola de Barbiana para filhos de camponeses que eram reprovados na Itália dos anos 1960. Com seus estudantes escreveu Carta a uma Professora, uma crítica à seleção que excluía os mais pobres. Defendeu o domínio da palavra como instrumento de igualdade.',
+    start: 'Carta a uma Professora', v: [-1, 2, 0, 2, -1, 1, 1, 2] },
+  { n: 'Gianni Rodari', anos: '1920 a 1980', pais: 'Itália', conceito: 'Fantasia e criatividade',
+    resumo: 'Professor e escritor italiano que mostrou como a imaginação pode ser treinada com jogos de palavras e histórias inventadas. Defendeu a criatividade como direito de todos e como base de uma escola mais viva.',
+    start: 'Gramática da Fantasia', v: [1, 1, 0, 1, 0, 2, -1, 1] },
+  { n: 'Rabindranath Tagore', anos: '1861 a 1941', pais: 'Índia', conceito: 'Aprender ao ar livre',
+    resumo: 'Poeta e Nobel de Literatura que fundou em Santiniketan uma escola em que se aprendia sob as árvores, entre música, dança e literatura, em diálogo com a natureza. Criticou o modelo colonial e imaginou uma educação que unisse culturas.',
+    start: 'Personality (1917), que inclui o ensaio My School', v: [2, 1, 1, 1, -2, 2, 0, 1] },
+  { n: 'Mahatma Gandhi', anos: '1869 a 1948', pais: 'Índia', conceito: 'Nai Talim, educação básica',
+    resumo: 'Líder da independência indiana que propôs a Nai Talim, uma educação básica centrada no trabalho manual produtivo e na vida da comunidade. Para ele, aprender fiando, cultivando e construindo forma caráter e autonomia, em oposição ao ensino colonial.',
+    start: 'Textos reunidos em Basic Education', v: [0, 2, 2, 2, -2, 0, 1, 1] },
+  { n: 'Sugata Mitra', anos: 'nascido em 1952', pais: 'Índia e Reino Unido', conceito: 'Ambientes de aprendizagem auto-organizados',
+    resumo: 'Pesquisador que, em 1999, instalou um computador em um muro de um bairro pobre de Nova Délhi e observou crianças aprendendo sozinhas. Propôs ambientes auto-organizados em que grupos investigam grandes perguntas. Sua abordagem é discutida: críticos lembram o papel insubstituível do professor.',
+    start: 'Beyond the Hole in the Wall', v: [2, 1, 1, 2, 2, 0, -2, 1] },
+  { n: 'Ken Robinson', anos: '1950 a 2020', pais: 'Reino Unido', conceito: 'Criatividade na escola',
+    resumo: 'Educador britânico cuja palestra sobre criatividade se tornou uma das mais vistas da história do TED. Alertou que os sistemas escolares podem sufocar talentos e defendeu valorizar as artes, a diversidade de aptidões e a aprendizagem personalizada.',
+    start: 'O Elemento Chave', v: [2, 0, 1, 0, 1, 2, -1, 1] },
+  { n: 'Jaime Escalante', anos: '1930 a 2010', pais: 'Bolívia e Estados Unidos', conceito: 'Altas expectativas',
+    resumo: 'Professor boliviano de matemática que, em uma escola pública de Los Angeles, levou estudantes de bairros pobres a passar em exames avançados de cálculo. Sua história inspirou o filme Stand and Deliver, de 1988.',
+    start: 'Escalante: The Best Teacher in America, de Jay Mathews', v: [-1, 1, 1, 1, 2, 0, 2, 2] },
+  { n: 'Septima Clark', anos: '1898 a 1987', pais: 'Estados Unidos', conceito: 'Escolas de cidadania',
+    resumo: 'Professora negra da Carolina do Sul que criou as Escolas de Cidadania, nas quais adultos aprendiam a ler e escrever para poder votar. Foi reconhecida como uma das mães do movimento pelos direitos civis.',
+    start: 'Echo in My Soul', v: [0, 2, 1, 2, -2, 0, 1, 2] },
+  { n: 'Mary McLeod Bethune', anos: '1875 a 1955', pais: 'Estados Unidos', conceito: 'Educação para a dignidade',
+    resumo: 'Educadora negra que, em 1904, abriu com poucos recursos uma escola para meninas negras em Daytona, na Flórida, que depois se tornou a Universidade Bethune-Cookman. Liderou a luta por educação e direitos da população negra e aconselhou presidentes dos Estados Unidos.',
+    start: 'Mary McLeod Bethune: Building a Better World', v: [-1, 2, 1, 1, 0, 0, 2, 2] },
+  { n: 'Nísia Floresta', anos: '1810 a 1885', pais: 'Brasil', conceito: 'Educação das mulheres',
+    resumo: 'Potiguar pioneira do feminismo brasileiro, fundou no Rio de Janeiro, em 1838, o Colégio Augusto, que oferecia às meninas um currículo mais amplo do que o da época. Em 1832, publicou Direito das Mulheres e Injustiça dos Homens.',
+    start: 'Direito das Mulheres e Injustiça dos Homens', v: [1, 2, -1, -1, 0, 1, 1, 2] },
+  { n: 'Rubem Alves', anos: '1933 a 2014', pais: 'Brasil', conceito: 'Educação como alegria',
+    resumo: 'Teólogo, psicanalista e escritor mineiro que defendeu uma educação do desejo e da beleza, em que ensinar é despertar a alegria de aprender. Sua escrita poética critica a escola que prioriza informação e provas em lugar de sentido.',
+    start: 'A Alegria de Ensinar', v: [2, 0, 0, 0, -2, 2, -1, 2] },
+  { n: 'Dermeval Saviani', anos: 'nascido em 1943', pais: 'Brasil', conceito: 'Pedagogia histórico-crítica',
+    resumo: 'Educador que formulou a pedagogia histórico-crítica, segundo a qual a escola deve garantir às classes populares o acesso ao conhecimento sistematizado. Critica tanto o ensino tradicional quanto as pedagogias que esvaziam o papel do conteúdo.',
+    start: 'Escola e Democracia', v: [-2, 2, -1, 1, 0, 0, 2, 1] },
+  { n: 'Lélia Gonzalez', anos: '1935 a 1994', pais: 'Brasil', conceito: 'Amefricanidade',
+    resumo: 'Filósofa, antropóloga e professora, foi uma das fundadoras do Movimento Negro Unificado. Mostrou como racismo e sexismo estruturam a cultura e a escola brasileiras e propôs a amefricanidade para reconhecer a herança africana e indígena da América Latina.',
+    start: 'Por um Feminismo Afro-Latino-Americano', v: [0, 2, 0, 2, -1, 2, -1, 2] },
+  { n: 'Augusto Boal', anos: '1931 a 2009', pais: 'Brasil', conceito: 'Teatro do Oprimido',
+    resumo: 'Diretor e dramaturgo que, inspirado em Paulo Freire, criou o Teatro do Oprimido, no qual o público deixa de ser espectador e passa a atuar sobre o problema em cena. Suas técnicas, como o teatro-fórum, são usadas em escolas e comunidades do mundo todo.',
+    start: 'Teatro do Oprimido e Outras Poéticas Políticas', v: [1, 2, 2, 2, -2, 2, -1, 1] },
+  { n: 'Maxine Greene', anos: '1917 a 2014', pais: 'Estados Unidos', conceito: 'Imaginação social',
+    resumo: 'Filósofa da educação que defendeu a arte como modo de despertar a imaginação e o senso de possibilidade. Para ela, imaginar outro mundo é condição para agir por justiça. Foi filósofa residente do Lincoln Center Institute.',
+    start: 'Releasing the Imagination', v: [1, 2, 0, 1, -2, 2, -1, 1] },
+  { n: 'Nel Noddings', anos: '1929 a 2022', pais: 'Estados Unidos', conceito: 'Ética do cuidado',
+    resumo: 'Filósofa que colocou o cuidado no centro da educação: escolas devem formar pessoas capazes de cuidar de si, dos outros e do mundo. Criticou currículos fragmentados e a obsessão por testes, e propôs relações de confiança entre professores e estudantes.',
+    start: 'Caring: A Relational Approach to Ethics and Moral Education', v: [0, 0, 0, 1, -2, 1, 0, 2] },
+  { n: 'Edgar Morin', anos: '1921 a 2026', pais: 'França', conceito: 'Pensamento complexo',
+    resumo: 'Sociólogo e filósofo francês que, a pedido da UNESCO, escreveu sobre os saberes necessários à educação do futuro. Propôs religar disciplinas separadas, ensinar a enfrentar incertezas e formar uma cidadania planetária.',
+    start: 'Os Sete Saberes Necessários à Educação do Futuro', v: [1, 2, -1, 1, 2, 1, 1, 0] },
+  { n: 'Mitchel Resnick', anos: 'nascido em 1956', pais: 'Estados Unidos', conceito: 'Jardim de infância para a vida toda',
+    resumo: 'Pesquisador do MIT Media Lab, discípulo de Papert, que liderou a criação do Scratch, plataforma em que crianças programam histórias, jogos e animações. Defende que se aprende melhor por projetos, paixão, parcerias e brincadeira.',
+    start: 'Jardim de Infância para a Vida Toda', v: [2, 0, 2, 2, 2, 2, -1, 1] },
+  { n: 'Anne Sullivan', anos: '1866 a 1936', pais: 'Estados Unidos', conceito: 'Mediação pelo tato',
+    resumo: 'Professora que, a partir de 1887, ensinou Helen Keller, surda e cega, a se comunicar usando o alfabeto manual soletrado na palma da mão. Sua paciência e criatividade mostraram que o acesso à linguagem muda a vida de uma pessoa.',
+    start: 'A História da Minha Vida, de Helen Keller', v: [-1, 0, 2, -1, 0, 0, 2, 2] },
+  { n: 'Louis Braille', anos: '1809 a 1852', pais: 'França', conceito: 'Escrita tátil',
+    resumo: 'Cego desde a infância, desenvolveu aos 15 anos, em 1824, o sistema de pontos em relevo que leva seu nome. Professor no Instituto Nacional de Jovens Cegos, em Paris, deu a pessoas cegas acesso autônomo à leitura, à escrita e à música.',
+    start: 'O sistema Braille, descrito em seu tratado de 1829', v: [0, 1, 1, -1, 2, 1, 2, 2] },
+  { n: 'Henri Wallon', anos: '1879 a 1962', pais: 'França', conceito: 'Afetividade e desenvolvimento',
+    resumo: 'Médico, psicólogo e professor que defendeu que emoção, movimento e inteligência se desenvolvem juntos e que a criança deve ser compreendida em seu meio social. Sua obra é muito presente na pedagogia brasileira, que vê o afeto como parte da aprendizagem.',
+    start: 'A Evolução Psicológica da Criança', v: [0, 1, 0, 2, 1, 2, 1, 2] },
+  { n: 'Ana Mae Barbosa', anos: 'nascida em 1936', pais: 'Brasil', conceito: 'Abordagem Triangular',
+    resumo: 'Principal referência do ensino de arte no Brasil, sistematizou a Abordagem Triangular, que articula ler obras, fazer arte e contextualizar. Defende a arte como conhecimento e como direito de todos, com forte influência de Paulo Freire.',
+    start: 'A Imagem no Ensino da Arte', v: [1, 2, 1, 1, 0, 2, 1, 1] },
+  { n: 'Ubiratan D\'Ambrosio', anos: '1932 a 2021', pais: 'Brasil', conceito: 'Etnomatemática',
+    resumo: 'Matemático paulistano que mostrou que cada cultura produz seus modos de contar, medir e raciocinar. Com a etnomatemática, defendeu uma matemática que dialogue com as tradições dos estudantes e com a justiça social.',
+    start: 'Etnomatemática: Elo entre as Tradições e a Modernidade', v: [1, 2, 1, 1, 1, 1, 0, 2] },
+  { n: 'Gloria Ladson-Billings', anos: 'nascida em 1947', pais: 'Estados Unidos', conceito: 'Pedagogia culturalmente relevante',
+    resumo: 'Pesquisadora que estudou professores bem-sucedidos com estudantes negros e formulou a pedagogia culturalmente relevante. Ela pede altas expectativas, competência cultural e consciência crítica sobre as desigualdades.',
+    start: 'The Dreamkeepers', v: [1, 2, 1, 1, 0, 1, 2, 2] },
+  { n: 'Nilma Lino Gomes', anos: 'nascida em 1961', pais: 'Brasil', conceito: 'Movimento negro educador',
+    resumo: 'Pedagoga e pesquisadora das relações étnico-raciais na educação, mostrou como o movimento negro produz e sistematiza saberes emancipatórios. Seu trabalho fundamenta a Lei 10.639/2003, que tornou obrigatório o ensino de história e cultura afro-brasileira.',
+    start: 'O Movimento Negro Educador', v: [0, 2, 0, 2, 1, 1, 1, 2] },
+  { n: 'Reuven Feuerstein', anos: '1921 a 2014', pais: 'Romênia e Israel', conceito: 'Experiência de aprendizagem mediada',
+    resumo: 'Psicólogo que trabalhou com jovens sobreviventes do Holocausto e defendeu que a inteligência é modificável: com mediação adequada, qualquer pessoa pode ampliar sua capacidade de aprender. Criou o Programa de Enriquecimento Instrumental.',
+    start: 'Instrumental Enrichment', v: [-1, 0, 0, 0, 2, 0, 2, 2] }
+];
+
+/* Leituras adicionais por educador, além da obra de entrada (start). */
+var LEITURAS = {
+  'Paulo Freire': ['Pedagogia da Autonomia (1996)', 'Educação como Prática da Liberdade (1967)'],
+  'Maria Montessori': ['Para Educar o Potencial Humano', 'Pedagogia Científica'],
+  'John Dewey': ['Experiência e Educação (1938)', 'Como Pensamos (1910)'],
+  'Lev Vygotsky': ['Pensamento e Linguagem (1934)', 'Imaginação e Criação na Infância'],
+  'Jean Piaget': ['O Nascimento da Inteligência na Criança (1936)', 'Para Onde Vai a Educação?'],
+  'Anísio Teixeira': ['Educação é um Direito (1967)', 'Pequena Introdução à Filosofia da Educação (1934)'],
+  'Célestin Freinet': ['As Técnicas Freinet da Escola Moderna', 'A Educação do Trabalho'],
+  'Loris Malaguzzi': ['Diálogos com Reggio Emilia: escutar, investigar e aprender, de Carlina Rinaldi'],
+  'bell hooks': ['Ensinando Pensamento Crítico: sabedoria prática', 'Ensinando Comunidade: uma pedagogia da esperança'],
+  'A. S. Neill': ['The Problem Child (1926)'],
+  'Ivan Illich': ['A Convivencialidade'],
+  'Henry Giroux': ['Teoria Crítica e Resistência em Educação', 'Cultura, Política e Prática Educacional'],
+  'Darcy Ribeiro': ['O Povo Brasileiro (1995)'],
+  'Magda Soares': ['Alfaletrar: toda criança pode aprender a ler e a escrever (2020)', 'Alfabetização: a questão dos métodos (2017)'],
+  'Emilia Ferreiro': ['Reflexões sobre Alfabetização', 'Alfabetização em Processo'],
+  'Seymour Papert': ['Logo: Computadores e Educação (Mindstorms, 1980)', 'Família em Rede'],
+  'Jerome Bruner': ['A Cultura da Educação (1996)', 'Atos de Significação (1990)'],
+  'Howard Gardner': ['Inteligências Múltiplas: a teoria na prática', 'Cinco Mentes para o Futuro'],
+  'Janusz Korczak': ['Quando Eu Voltar a Ser Criança (1925)', 'Como Amar uma Criança (1919)'],
+  'Johann Pestalozzi': ['Lienhard und Gertrud (1781)'],
+  'Friedrich Fröbel': ['Mutter- und Koselieder (1844)'],
+  'Jean-Jacques Rousseau': ['Do Contrato Social (1762)'],
+  'Ovide Decroly': [],
+  'Francisco Ferrer i Guàrdia': [],
+  'Lorenzo Milani': ['L\'obbedienza non è più una virtù (1965)'],
+  'Gianni Rodari': ['Contos ao Telefone (1962)'],
+  'Rabindranath Tagore': ['Gitanjali (1910)', 'A Casa e o Mundo (1916)'],
+  'Mahatma Gandhi': ['Minha Vida e Minhas Experiências com a Verdade', 'Hind Swaraj (1909)'],
+  'Sugata Mitra': ['The School in the Cloud (2019)'],
+  'Ken Robinson': ['Escolas Criativas: a revolução que está transformando a educação', 'Out of Our Minds: Learning to Be Creative (2001)'],
+  'Jaime Escalante': [],
+  'Septima Clark': ['Ready from Within (1986)'],
+  'Mary McLeod Bethune': ['Mary McLeod Bethune: A Biography (1964), de Rackham Holt'],
+  'Nísia Floresta': ['Opúsculo Humanitário (1853)', 'Cintilações de uma Alma Brasileira (1859)'],
+  'Rubem Alves': ['Por uma Educação Romântica (2002)', 'Conversas com Quem Gosta de Ensinar (1980)'],
+  'Dermeval Saviani': ['Pedagogia Histórico-Crítica: primeiras aproximações (1991)', 'História das Ideias Pedagógicas no Brasil (2007)'],
+  'Lélia Gonzalez': ['Primavera para as Rosas Negras: Lélia Gonzalez em primeira pessoa (2018)'],
+  'Augusto Boal': ['Jogos para Atores e Não Atores', 'A Estética do Oprimido (2009)'],
+  'Maxine Greene': ['The Dialectic of Freedom (1988)', 'Variations on a Blue Guitar (2001)'],
+  'Nel Noddings': ['Educating Moral People (2002)', 'Happiness and Education (2003)'],
+  'Edgar Morin': ['A Cabeça Bem-Feita: repensar a reforma, reformar o pensamento (1999)', 'Introdução ao Pensamento Complexo'],
+  'Mitchel Resnick': ['Turtles, Termites, and Traffic Jams (1994)'],
+  'Anne Sullivan': ['Helen and Teacher (1980), de Joseph Lash'],
+  'Louis Braille': ['The Reading Fingers: Life of Louis Braille, de Jean Roblin'],
+  'Henri Wallon': ['As Origens do Pensamento na Criança', 'Do Ato ao Pensamento'],
+  'Ana Mae Barbosa': ['Tópicos Utópicos (1998)', 'Arte-Educação no Brasil (1978)'],
+  'Ubiratan D\'Ambrosio': ['Educação Matemática: da teoria à prática (1996)', 'Transdisciplinaridade (1997)'],
+  'Gloria Ladson-Billings': ['Crossing Over to Canaan (2001)', 'Culturally Relevant Pedagogy 2.0: a.k.a. the Remix (2014)'],
+  'Nilma Lino Gomes': ['Sem Perder a Raiz: corpo e cabelo como símbolos da identidade negra (2006)', 'Indagações sobre Currículo: diversidade e currículo (2007)'],
+  'Reuven Feuerstein': ['Don\'t Accept Me as I Am (1988)']
+};
+EDUCATORS.forEach(function (e) { e.leituras = LEITURAS[e.n] || []; });
+var BIOS = {
+'Paulo Freire': [
+'Paulo Reglus Neves Freire nasceu em Recife, em 1921. Viveu a infância marcada pelas dificuldades econômicas da família durante a crise dos anos 1930, experiência que ele mesmo associava à sua sensibilidade para a fome e para o atraso escolar. Formou-se em Direito, mas dedicou-se à educação, trabalhando no Serviço Social da Indústria (SESI) e, depois, na Universidade do Recife.',
+'No início dos anos 1960, coordenou experiências de alfabetização de jovens e adultos, entre elas a de Angicos, no Rio Grande do Norte, em que trabalhadores rurais foram alfabetizados em poucas semanas a partir de palavras do próprio cotidiano. Depois do golpe de 1964, foi preso e partiu para o exílio, passando pelo Chile, pelos Estados Unidos e pela Suíça. Nesse período escreveu a Pedagogia do Oprimido, em que propõe que educar é um ato de diálogo e de leitura crítica do mundo, em oposição à "educação bancária", na qual o conhecimento é apenas depositado no estudante.',
+'Voltou ao Brasil em 1980, ajudou a fundar o Partido dos Trabalhadores e foi secretário municipal de Educação de São Paulo entre 1989 e 1991. Morreu em 1997. É um dos autores brasileiros mais lidos e citados no mundo, e suas ideias seguem presentes na formação de professores, na educação popular e nos debates sobre participação e autonomia de estudantes.'],
+'Maria Montessori': [
+'Maria Montessori nasceu em Chiaravalle, na Itália, em 1870. Enfrentou resistências da família e da sociedade para estudar ciências e engenharia e, por fim, medicina, tornando-se uma das primeiras mulheres a se formar médica no país, em 1896. Trabalhou com crianças com deficiência intelectual em Roma e passou a se interessar pelos princípios de desenvolvimento e aprendizagem.',
+'Em 1907, abriu a Casa dei Bambini, em um bairro popular de Roma, onde desenvolveu seu método a partir da observação atenta das crianças. Propôs um ambiente preparado, com mobiliário na altura do corpo infantil, materiais concretos e autocorretivos, turmas com idades mistas e longos períodos de trabalho sem interrupção. O papel do adulto passa a ser o de observar, preparar o ambiente e orientar, respeitando o ritmo de cada criança.',
+'Ao longo da vida, difundiu sua proposta em vários países, deixou a Itália durante o período fascista e viveu na Índia durante a Segunda Guerra Mundial. Morreu nos Países Baixos, em 1952. Hoje há escolas inspiradas em seu trabalho em todo o mundo, e sua ênfase em autonomia, concentração e materiais sensoriais continua influenciando a educação infantil.'],
+'John Dewey': [
+'John Dewey nasceu em Burlington, no estado de Vermont, nos Estados Unidos, em 1859. Formou-se filósofo e foi professor nas universidades de Michigan, Chicago e Columbia. Associado ao pragmatismo, defendia que o pensamento nasce de problemas reais e que ideias devem ser avaliadas por suas consequências na experiência.',
+'Em 1896, fundou a Escola Laboratório da Universidade de Chicago, onde testou a ideia de que a escola deve ser uma pequena comunidade, ligada à vida social, em que estudantes investigam, constroem e cooperam. Em Democracia e Educação (1916), sustentou que educar é preparar para uma vida democrática compartilhada, e em Experiência e Educação (1938) advertiu que nem toda experiência educa: é preciso continuidade e reflexão sobre ela.',
+'Dewey morreu em Nova York, em 1952. Suas ideias inspiraram o movimento da Escola Nova em vários países, inclusive no Brasil, por meio de seu discípulo Anísio Teixeira. Seu legado aparece hoje em propostas como aprendizagem baseada em projetos, investigação e educação para a cidadania.'],
+'Lev Vygotsky': [
+'Lev Semionovitch Vygotsky nasceu em 1896, em Orsha, na atual Bielorrússia, e cresceu em Gomel, em uma família judaica de classe média. Estudou Direito e Filosofia em Moscou e depois dedicou-se à psicologia, ao trabalho com crianças com deficiência e à pesquisa sobre arte, linguagem e pensamento.',
+'Sua obra defende que o desenvolvimento humano é social e cultural: aprendemos em interação com outras pessoas e por meio de instrumentos e signos, como a linguagem. Daí vem o conceito de zona de desenvolvimento proximal, a distância entre o que a criança faz sozinha e o que consegue fazer com a ajuda de alguém mais experiente. Para ele, a boa aprendizagem antecipa o desenvolvimento e o impulsiona.',
+'Morreu de tuberculose em 1934, com apenas 37 anos. Seus escritos foram restringidos por um período na União Soviética e só ganharam ampla circulação internacional décadas depois. Hoje, Vygotsky é referência central em teorias de mediação, aprendizagem colaborativa e inclusão.'],
+'Jean Piaget': [
+'Jean Piaget nasceu em Neuchâtel, na Suíça, em 1896. Começou como biólogo, com estudos sobre moluscos, e só depois voltou-se à psicologia. Em Paris, trabalhou na padronização de testes de inteligência e percebeu que os erros das crianças seguiam padrões, o que o levou a investigar como o pensamento se forma.',
+'Radicado em Genebra, propôs que a criança constrói ativamente o conhecimento por meio de processos de assimilação, acomodação e equilibração. Descreveu estágios do desenvolvimento cognitivo: sensório-motor, pré-operatório, operatório concreto e operatório formal. Sua epistemologia genética procurou explicar como o conhecimento se desenvolve ao longo da história de cada indivíduo.',
+'Fundou o Centro Internacional de Epistemologia Genética em 1955 e morreu em Genebra, em 1980. Suas ideias deram base a muitas propostas construtivistas de ensino, e suas pesquisas foram ampliadas e também debatidas por autores posteriores, que destacaram o papel da cultura e da linguagem.'],
+'Anísio Teixeira': [
+'Anísio Spínola Teixeira nasceu em Caetité, na Bahia, em 1900, e se formou em Direito. Foi diretor da Instrução Pública da Bahia na década de 1920 e, em 1927, estudou no Teachers College da Universidade de Columbia, onde conheceu de perto a obra de John Dewey, que o marcou profundamente.',
+'Como gestor, comandou a educação do então Distrito Federal, no Rio de Janeiro, nos anos 1930, e foi um dos signatários do Manifesto dos Pioneiros da Educação Nova, de 1932, que defendia escola pública, laica, gratuita e de qualidade para todos. Na Bahia, idealizou o Centro Educacional Carneiro Ribeiro, a Escola Parque, que combinava ensino regular com atividades de arte, trabalho, esporte e vida social em turno integral.',
+'Foi também dirigente do INEP e da Capes e participou da criação da Universidade de Brasília. Morreu em 1971, no Rio de Janeiro. É reconhecido como um dos grandes formuladores da ideia de que a educação pública de qualidade é um direito e uma condição da democracia.'],
+'Célestin Freinet': [
+'Célestin Freinet nasceu em 1896, em Gars, no sul da França, em uma família camponesa. Ferido em um pulmão durante a Primeira Guerra Mundial, tinha dificuldade para falar por longos períodos, o que o levou a procurar formas de trabalho em sala menos centradas na exposição oral. Tornou-se professor primário em Bar-sur-Loup.',
+'Desenvolveu técnicas que ficaram conhecidas no mundo todo: a aula-passeio, em que turmas exploram o entorno e depois sistematizam o que observaram; a imprensa escolar e o jornal da escola; a correspondência entre escolas; o texto livre; e a assembleia de cooperação. A ideia central é que estudantes aprendem ao produzir algo real, para leitores reais, num ambiente de trabalho cooperativo.',
+'Fundou uma escola em Vence, em 1935, e organizou o movimento da Escola Moderna, que se tornou uma rede internacional de professores. Morreu em 1966. No Brasil e em outros países, seu legado continua em práticas de jornal escolar, projetos e cooperação entre professores.'],
+'Loris Malaguzzi': [
+'Loris Malaguzzi nasceu em 1920, em Correggio, na Itália, e atuou como professor e psicólogo. Logo depois da Segunda Guerra Mundial, aproximou-se de um grupo de pais e mães de Villa Cella, perto de Reggio Emilia, que construiu uma escola para crianças pequenas com os próprios recursos e esforço. Esse episódio é lembrado como o início da experiência de Reggio.',
+'Nas décadas seguintes, liderou a rede de escolas municipais de educação infantil da cidade. Defendeu que a criança é competente, curiosa e cheia de potência, e que se expressa por muitas linguagens: o desenho, a escultura, a música, o movimento, a palavra. Daí a imagem das cem linguagens. A proposta valoriza os ateliês, a presença de um atelierista, os projetos de longa duração, a documentação pedagógica e o espaço entendido como um "terceiro educador".',
+'Morreu em 1994. A abordagem de Reggio Emilia é hoje estudada em muitos países e inspira escolas e redes que investem na escuta das crianças, na participação das famílias e na organização cuidadosa de ambientes de aprendizagem.'],
+'bell hooks': [
+'bell hooks é o pseudônimo de Gloria Jean Watkins, nascida em Hopkinsville, no Kentucky, em 1952. Escolheu o nome da bisavó materna e o escreveu em letras minúsculas para dar destaque às ideias, e não à pessoa. Cresceu no sul segregado dos Estados Unidos e estudou em escolas que, em suas palavras, eram espaços de cuidado e de compromisso com a comunidade negra.',
+'Doutorou-se na Universidade da Califórnia em Santa Cruz e lecionou em instituições como Yale, Oberlin e a City College de Nova York. Publicou ensaios sobre gênero, raça, classe e educação. Em Ensinando a Transgredir (1994), propôs uma pedagogia engajada, inspirada em Paulo Freire e no monge Thich Nhat Hanh, em que a sala de aula é uma comunidade, a alegria de aprender é legítima e professores também se transformam no processo.',
+'Mais tarde, retornou ao Kentucky e atuou no Berea College. Morreu em 2021. Seus livros são lidos em cursos de educação, feminismo e estudos culturais, e sua defesa de uma educação que acolhe corpos, histórias e vozes diversas segue muito influente.'],
+'A. S. Neill': [
+'Alexander Sutherland Neill nasceu em 1883, em Forfar, na Escócia, em uma família numerosa, e começou a trabalhar como professor ainda jovem. Estudou na Universidade de Edimburgo e tornou-se crítico de métodos baseados na obediência e na memorização, o que o levou a buscar alternativas.',
+'Em 1921, fundou o que viria a ser a escola de Summerhill, primeiro na Alemanha e depois na Inglaterra, onde se fixou em Leiston, no condado de Suffolk, a partir de 1927. Em Summerhill, as aulas são opcionais e há uma assembleia semanal em que estudantes e adultos têm o mesmo voto para decidir as regras da comunidade. A convicção de Neill era a de que a liberdade com responsabilidade favorece o desenvolvimento emocional e a felicidade.',
+'Seu livro Summerhill (1960) tornou-se conhecido mundialmente. Neill morreu em 1973, e a escola continua funcionando sob direção de sua família. Sua proposta é frequentemente discutida em debates sobre autonomia, autogestão e democracia nas instituições educativas.'],
+'Ivan Illich': [
+'Ivan Illich nasceu em Viena, em 1926, estudou teologia e filosofia em Roma e foi ordenado padre católico. Trabalhou com comunidades latino-americanas em Nova York e em Porto Rico e depois fundou, em Cuernavaca, no México, o Centro Intercultural de Documentação, um espaço de debate e formação crítica.',
+'Em Sociedade sem Escolas (1971), questionou a ideia de que aprender depende necessariamente de instituições formais e propôs redes de aprendizagem, em que pessoas encontrariam livremente recursos, materiais e parceiros de estudo. Mais tarde, ampliou sua crítica a outras áreas, como a saúde e a tecnologia, defendendo "ferramentas convivenciais", que ampliam a autonomia em vez de gerar dependência.',
+'Viveu seus últimos anos entre México, Estados Unidos e Alemanha e morreu em Bremen, em 2002. Suas teses são polêmicas e raramente aplicadas ao pé da letra, mas seguem estimulando perguntas sobre o sentido da escolarização, o papel do mercado e a autonomia de quem aprende.'],
+'Henry Giroux': [
+'Henry Armand Giroux nasceu em 1943, em Providence, nos Estados Unidos, em uma família de origem operária. Foi atleta na juventude, formou-se em educação e fez o doutorado na Universidade Carnegie Mellon. Lecionou em instituições como as universidades de Boston, de Miami (Ohio), Penn State e McMaster, no Canadá.',
+'Tornou-se um dos principais nomes da pedagogia crítica, corrente que une a tradição de Paulo Freire e a teoria social crítica. Em obras como Professores como Intelectuais Transformadores (1988), defende que docentes são profissionais que pensam, escolhem e interpretam o currículo, não meros executores de pacotes prontos. Para Giroux, educar é formar pessoas capazes de debater, imaginar alternativas e participar da vida pública.',
+'Continua escrevendo sobre cultura, mídia, democracia e o papel da universidade. Suas ideias são muito citadas em cursos de formação docente e em discussões sobre cidadania, autonomia profissional e educação como prática democrática.'],
+'Darcy Ribeiro': [
+'Darcy Ribeiro nasceu em Montes Claros, Minas Gerais, em 1922. Formou-se em Ciências Sociais em São Paulo e dedicou-se à antropologia, com pesquisas sobre povos indígenas, como os Kadiwéu e os Urubu-Kaapor. Foi um dos idealizadores do Museu do Índio e do Parque Indígena do Xingu.',
+'Na vida pública, foi ministro da Educação e chefe da Casa Civil no governo de João Goulart, e um dos fundadores da Universidade de Brasília. Após o golpe de 1964, exilou-se em diversos países da América Latina. De volta ao Brasil, foi vice-governador do Rio de Janeiro e criou os Centros Integrados de Educação Pública (CIEPs), escolas de tempo integral com alimentação, atividades culturais e esportivas, ideia herdada de Anísio Teixeira.',
+'Foi senador e relator da Lei de Diretrizes e Bases da Educação Nacional de 1996. Escreveu também grandes ensaios sobre a formação do povo brasileiro. Morreu em 1997. Seu legado é a defesa de uma escola pública ampla, com tempo e estrutura para ensinar bem a todas as crianças.'],
+'Magda Soares': [
+'Magda Becker Soares nasceu em Belo Horizonte, em 1932. Graduou-se em Letras Neolatinas e fez longa carreira como professora e pesquisadora na Faculdade de Educação da Universidade Federal de Minas Gerais, onde ajudou a consolidar o Centro de Alfabetização, Leitura e Escrita (Ceale).',
+'Foi uma das principais responsáveis por difundir no Brasil o conceito de letramento, que descreve o uso social da leitura e da escrita e vai além do domínio do código. Em livros como Letramento: um tema em três gêneros (1998) e Alfaletrar (2020), defendeu que alfabetização e letramento são processos distintos, mas inseparáveis: é preciso ensinar o sistema de escrita ao mesmo tempo em que se fazem usos reais de textos.',
+'Também estudou a história da formação de leitores e a produção de livros didáticos. Morreu em 2023, aos 91 anos. Sua obra orienta políticas de alfabetização, a formação de professores e o cotidiano de milhares de turmas de crianças e de adultos.'],
+'Emilia Ferreiro': [
+'Emilia Ferreiro nasceu em Buenos Aires, em 1937. Formou-se em Ciências da Educação e doutorou-se na Universidade de Genebra, sob a orientação de Jean Piaget. Mais tarde, passou a viver no México, onde atuou no Centro de Pesquisa e de Estudos Avançados do Instituto Politécnico Nacional.',
+'Com Ana Teberosky, publicou em 1979 a pesquisa que ficou conhecida no Brasil como Psicogênese da Língua Escrita. Os estudos mostraram que, antes de serem ensinadas formalmente, as crianças formulam hipóteses sobre a escrita e passam por níveis, como o pré-silábico, o silábico, o silábico-alfabético e o alfabético. O erro, portanto, é visto como parte da construção do conhecimento.',
+'Seu trabalho teve grande repercussão em políticas e práticas de alfabetização na América Latina, em especial no Brasil, nas décadas de 1980 e 1990. Ferreiro também escreveu sobre o letramento, a cultura escrita e o uso das tecnologias digitais, e suas ideias continuam sendo estudadas e debatidas.'],
+'Seymour Papert': [
+'Seymour Papert nasceu em Pretória, na África do Sul, em 1928. Estudou matemática e atuou como ativista contra o apartheid. Mais tarde, estudou na Universidade de Cambridge e foi para Genebra, onde trabalhou com Jean Piaget entre 1958 e 1963. Dali foi para o Instituto de Tecnologia de Massachusetts (MIT).',
+'No MIT, foi cofundador do Laboratório de Inteligência Artificial e participou da criação da linguagem de programação Logo, na qual estudantes comandam uma "tartaruga" para desenhar figuras. Em Logo e em seu livro Mindstorms (1980), apresentou o construcionismo: a ideia de que as pessoas aprendem melhor quando constroem objetos que podem compartilhar e examinar, e de que o computador pode ser uma ferramenta para pensar, e não apenas para receber instrução.',
+'Sofreu um grave acidente em Hanói, em 2006, e morreu em 2016. Suas ideias deram origem a movimentos de cultura maker, programação criativa e robótica educacional, e seguem influenciando pesquisadores como Mitchel Resnick.'],
+'Jerome Bruner': [
+'Jerome Seymour Bruner nasceu em Nova York, em 1915, e estudou em Duke e Harvard. Foi um dos líderes da chamada revolução cognitiva e fundou, em 1960, o Centro de Estudos Cognitivos de Harvard. Mais tarde lecionou em Oxford e na Universidade de Nova York.',
+'Em O Processo da Educação (1960), propôs que qualquer assunto pode ser ensinado de modo honesto a qualquer criança, desde que adaptado ao seu modo de pensar, e formulou a ideia de currículo em espiral, em que temas são revisitados com crescente profundidade. Estudou a aprendizagem por descoberta e, com David Wood e Gail Ross, apresentou a noção de andaimes: apoios temporários que o adulto oferece e retira conforme a autonomia do estudante cresce.',
+'Nas décadas finais, voltou-se ao papel da cultura e da narrativa na construção do significado, como em A Cultura da Educação (1996). Morreu em 2016, aos 100 anos. Sua obra conecta psicologia e educação e é referência em debates sobre currículo e mediação.'],
+'Howard Gardner': [
+'Howard Gardner nasceu em 1943, em Scranton, na Pensilvânia, filho de imigrantes judeus que fugiram da Alemanha nazista. Estudou em Harvard, onde teve como mentores Erik Erikson e Jerome Bruner, e passou a atuar como professor na Escola de Educação da mesma universidade e como codiretor do Projeto Zero.',
+'Em Estruturas da Mente (1983), propôs a teoria das inteligências múltiplas, segundo a qual a inteligência não seria uma capacidade única, mas um conjunto de capacidades relativamente independentes: linguística, lógico-matemática, espacial, musical, corporal-cinestésica, interpessoal, intrapessoal e naturalista. A teoria influenciou práticas que valorizam diferentes formas de expressão e de avaliação.',
+'A proposta também recebe críticas de psicólogos, que questionam a base empírica de algumas inteligências, e o próprio Gardner alerta contra a rotulação de estudantes. Seu trabalho mais recente trata de ética, de trabalho bem-feito e de educação para a compreensão.'],
+'Janusz Korczak': [
+'Janusz Korczak é o nome com que ficou conhecido Henryk Goldszmit, nascido em Varsóvia, em 1878, em uma família judaica assimilada. Formou-se em medicina e tornou-se pediatra, mas também escrevia livros, artigos e programas de rádio para crianças e adultos.',
+'Em 1912, assumiu a direção do orfanato Dom Sierot, em Varsóvia, onde organizou um parlamento, um tribunal e um jornal geridos pelas crianças. Em obras como Como Amar uma Criança e O Direito da Criança ao Respeito, defendeu que a criança é uma pessoa plena, com direitos próprios desde já, e que o adulto deve aprender a observá-la e a escutá-la. O livro infantil O Rei Mateus Primeiro é uma de suas obras mais conhecidas.',
+'Em 1942, durante a ocupação nazista da Polônia, acompanhou as crianças do orfanato até o campo de Treblinka, onde morreu, ao recusar a oportunidade de salvar a si mesmo. Suas ideias inspiraram, décadas depois, a Convenção sobre os Direitos da Criança, aprovada pelas Nações Unidas em 1989.'],
+'Johann Pestalozzi': [
+'Johann Heinrich Pestalozzi nasceu em Zurique, na Suíça, em 1746. Marcado pela leitura de Rousseau e pela convivência com famílias pobres do campo, tentou criar uma propriedade rural, em Neuhof, onde acolhia crianças em situação de miséria e as ensinava a trabalhar e a ler.',
+'Em 1799, assumiu a educação de crianças órfãs em Stans, após a guerra, e depois dirigiu escolas em Burgdorf e Yverdon, que atraíram visitantes de toda a Europa. Defendeu que a educação deve cultivar a cabeça, o coração e as mãos, partindo da intuição sensível, de objetos concretos e do afeto da relação educativa, e avançando do simples ao complexo. O romance Leonardo e Gertrudes (1781) divulgou suas ideias entre o público.',
+'Morreu em 1827. Teve grande influência sobre Fröbel, Herbart e sobre sistemas escolares na Europa e nas Américas. Hoje é lembrado como um dos primeiros a vincular a educação popular ao cuidado com o desenvolvimento integral de cada criança.'],
+'Friedrich Fröbel': [
+'Friedrich Wilhelm August Fröbel nasceu em 1782, em Oberweißbach, na Turíngia, na atual Alemanha. Teve infância solitária, estudou ciências naturais e arquitetura e trabalhou como preceptor. Visitou e colaborou com Pestalozzi em Yverdon, o que o marcou profundamente.',
+'Em 1840, fundou em Bad Blankenburg o primeiro Kindergarten, o "jardim de crianças", expressão que se espalhou pelo mundo. Em sua visão, a infância é uma etapa valiosa em si mesma, e o brincar é a atividade pela qual a criança se relaciona com o mundo. Criou os "dons", conjuntos de materiais como esferas, cubos e cilindros, e as "ocupações", como dobradura e tecelagem, para guiar a exploração de formas e relações.',
+'Em 1851, as autoridades da Prússia proibiram os jardins de infância, por razões políticas, o que prejudicou o movimento. Fröbel morreu em 1852. Seu trabalho foi retomado por discípulas e discípulos, e sua influência permanece na educação infantil, na valorização do brincar e nos materiais manipuláveis.'],
+'Jean-Jacques Rousseau': [
+'Jean-Jacques Rousseau nasceu em Genebra, em 1712, e teve formação irregular, em grande parte autodidata. Viveu na França e em outros países europeus, e foi escritor, filósofo, músico e pensador político. Era próximo dos iluministas, mas também crítico de vários de seus pressupostos.',
+'Em Emílio ou Da Educação (1762), imaginou a formação de um menino conduzida segundo o desenvolvimento natural, com respeito a cada fase da infância, aprendizagem por experiência direta e liberdade para explorar. A frase de abertura da obra afirma que tudo é bom ao sair das mãos do autor das coisas. Para Rousseau, a educação deveria proteger a criança de influências que a afastassem da própria natureza. Sua visão sobre a formação das mulheres, contudo, é hoje criticada por ser desigual.',
+'O livro foi condenado em Paris e em Genebra e Rousseau precisou deixar os dois lugares. Morreu em 1778. Apesar das controvérsias, é considerado um marco do pensamento pedagógico moderno por ter colocado a criança, e não o conteúdo, no centro da reflexão educacional.'],
+'Ovide Decroly': [
+'Ovide Decroly nasceu em Ronse, na Bélgica, em 1871. Formou-se em medicina e especializou-se em neurologia. Interessou-se por crianças com deficiência e, em 1901, fundou em Uccle, perto de Bruxelas, um instituto para a educação de crianças então chamadas de anormais, onde testou métodos de observação e ensino.',
+'Em 1907, abriu a Escola do Ermitage, em Bruxelas, voltada para crianças sem deficiência, transpondo para ela o que aprendera. Propôs os centros de interesse, em que o currículo se organiza ao redor de necessidades básicas da criança, como alimentar-se, proteger-se do clima, defender-se e trabalhar em conjunto. Defendeu também o método global de leitura, em que se parte de frases e palavras com sentido, e não de letras isoladas.',
+'Morreu em 1932. Suas propostas de globalização do ensino, trabalho por projetos e observação atenta influenciaram a Escola Nova na Europa e na América Latina, e inspiram propostas de ensino integrado até hoje.'],
+'Francisco Ferrer i Guàrdia': [
+'Francesc Ferrer i Guàrdia nasceu em 1859, em Alella, perto de Barcelona, na Espanha. Foi militante republicano e viveu muitos anos em Paris, onde ensinou espanhol e se aproximou de círculos libertários e racionalistas. Com a herança de uma amiga, pôde financiar um projeto educacional.',
+'Em 1901, abriu em Barcelona a Escola Moderna, que defendia uma educação laica, científica e racional, voltada a crianças de diferentes origens sociais, com coeducação de meninos e meninas, o que era muito inovador. Montou uma editora para produzir materiais didáticos, criticava o ensino baseado em castigos e valorizava a observação, as excursões e o estudo das ciências naturais.',
+'Foi acusado de incitar a Semana Trágica de Barcelona, em 1909, e executado por fuzilamento em outubro daquele ano, o que provocou protestos em muitos países. Sua memória inspirou escolas modernas na Europa e nas Américas, incluindo no Brasil, e é associada à luta pela educação laica e pela liberdade de pensamento.'],
+'Lorenzo Milani': [
+'Lorenzo Milani nasceu em Florença, em 1923, em uma família culta e de origem judaica e burguesa. Converteu-se ainda jovem ao catolicismo e foi ordenado padre em 1947. Em sua primeira paróquia, em Calenzano, organizou uma escola noturna para jovens operários e camponeses.',
+'Em 1954, foi enviado a Barbiana, pequeno povoado montanhoso da Toscana, onde criou uma escola em tempo integral para jovens do campo que não tinham acesso regular ao estudo. As aulas incluíam leitura de jornais, escrita coletiva e estudo de línguas, com os mais velhos ensinando os mais novos. O lema "I care", "eu me importo", resumia o compromisso com cada estudante. O grupo escreveu Carta a uma Professora (1967), que provocou grande debate na Itália sobre desigualdade no acesso à escola.',
+'Milani morreu de leucemia em 1967, aos 44 anos. Seu legado inclui a defesa da língua como instrumento de participação e de cidadania, e a ideia de que a escola só cumpre seu papel quando ninguém fica para trás.'],
+};
+
+var BIOS2 = {
+'Gianni Rodari': [
+'Gianni Rodari nasceu em 1920, em Omegna, no Piemonte, na Itália. Perdeu o pai ainda criança, estudou em um seminário e formou-se professor. Atuou como docente do ensino primário, participou da Resistência e depois seguiu carreira de jornalista, escrevendo para jornais e revistas, entre eles o L\'Unità, onde também publicou textos para crianças.',
+'Escreveu livros como Il libro delle filastrocche (1950), As Aventuras de Cebolinha (1951) e Gelsomino no País dos Mentirosos (1958). Em Gramática da Fantasia (1973), reuniu técnicas para inventar histórias, como o binômio fantástico, em que duas palavras sem relação aparente são combinadas para gerar uma narrativa. Para ele, imaginar é uma capacidade de todos e deve ser cultivada na escola e em casa.',
+'Recebeu o Prêmio Hans Christian Andersen em 1970, a maior distinção internacional da literatura infantil. Morreu em Roma, em 1980. Suas ideias seguem sendo usadas por professores de línguas, artes e educação infantil que buscam abrir espaço para a criação e o jogo com as palavras.'],
+'Rabindranath Tagore': [
+'Rabindranath Tagore nasceu em Calcutá, na Índia, em 1861, em uma família culta e influente de Bengala. Foi poeta, compositor, dramaturgo, pintor e educador. Em 1913, tornou-se o primeiro não europeu a receber o Prêmio Nobel de Literatura, pelo conjunto de sua obra poética.',
+'Em 1901, fundou em Santiniketan, na zona rural de Bengala, uma escola onde as aulas aconteciam ao ar livre, sob as árvores, com forte presença da música, do teatro, da literatura e das artes. Sua concepção buscava unir o contato com a natureza, a liberdade criadora e o diálogo entre as culturas do Oriente e do Ocidente. Em 1921, ampliou o projeto com a Universidade Visva-Bharati.',
+'Tagore morreu em 1941. É autor do hino nacional da Índia e do de Bangladesh. Sua visão de uma educação que combina beleza, convivência e curiosidade influenciou escolas e movimentos de educação pelas artes em várias partes do mundo.'],
+'Mahatma Gandhi': [
+'Mohandas Karamchand Gandhi nasceu em Porbandar, na Índia, em 1869. Estudou Direito em Londres e atuou como advogado na África do Sul, onde desenvolveu a prática da resistência não violenta. De volta à Índia, tornou-se a principal liderança do movimento pela independência do país.',
+'Em educação, defendeu a Nai Talim, "nova educação", também chamada de educação básica, apresentada em uma conferência em Wardha, em 1937. A proposta combina ensino da língua materna, de ciências e de matemática com o trabalho manual produtivo, como a fiação e o artesanato, para integrar mente, corpo e comunidade. Valorizava a formação do caráter, a simplicidade e o serviço ao próximo.',
+'Gandhi foi assassinado em 1948. Sua proposta educacional foi debatida, em especial a ideia de que as escolas pudessem se autofinanciar pelo trabalho dos estudantes, mas continua a inspirar projetos de educação para a paz, para a sustentabilidade e para a integração entre saber e fazer.'],
+'Sugata Mitra': [
+'Sugata Mitra nasceu em Calcutá, em 1952. Formou-se em física e fez carreira como pesquisador de tecnologia da informação na Índia, em uma empresa de treinamento em computação. Mais tarde, tornou-se professor de tecnologia educacional na Universidade de Newcastle, na Inglaterra.',
+'Em 1999, instalou um computador em uma parede de um bairro pobre de Nova Délhi e observou que crianças que nunca tinham usado a máquina aprenderam a utilizá-la juntas, sem instrução formal. O experimento ficou conhecido como "buraco na parede". A partir dele, propôs os Ambientes de Aprendizagem Auto-organizados (SOLE), em que pequenos grupos pesquisam grandes perguntas na internet com a mediação de um adulto que incentiva e escuta.',
+'Recebeu o Prêmio TED em 2013, e seus projetos foram levados a escolas em vários países. Sua proposta recebe elogios por incentivar curiosidade e cooperação, e também é discutida por pesquisadores que lembram a importância de um acompanhamento pedagógico cuidadoso e de evidências sobre resultados de longo prazo.'],
+'Ken Robinson': [
+'Kenneth Robinson nasceu em Liverpool, em 1950. Estudou na Universidade de Leeds e tornou-se professor de educação artística na Universidade de Warwick, onde coordenou projetos sobre o ensino das artes nas escolas. Foi nomeado cavaleiro pela rainha em 2003 por seus serviços à educação.',
+'Presidiu um comitê do governo britânico que produziu o relatório All Our Futures (1999), sobre criatividade e educação cultural. Em livros como O Elemento (2009) e Escolas Criativas (2015), e em uma palestra do TED de 2006 que se tornou uma das mais vistas de todos os tempos, defendeu que a criatividade é tão importante quanto a alfabetização e que cada pessoa tem talentos que merecem ser descobertos e cultivados.',
+'Mudou-se para os Estados Unidos em 2001 e morreu em Londres, em 2020. Seu trabalho convida escolas e sistemas de ensino a valorizar as artes, a diversidade de talentos e a combinação entre conhecimento, imaginação e propósito.'],
+'Jaime Escalante': [
+'Jaime Escalante nasceu em La Paz, na Bolívia, em 1930. Foi professor de matemática e de física em seu país por muitos anos. Em 1964, emigrou para os Estados Unidos, onde precisou recomeçar os estudos e a carreira, trabalhando em outras funções até validar sua formação e voltar a lecionar.',
+'Na Garfield High School, em Los Angeles, escola em um bairro de maioria latina e de baixa renda, passou a ensinar cálculo avançado e a preparar estudantes para os exames de Advanced Placement. Defendia altas expectativas, trabalho persistente e o lema "ganas", que significa vontade. Em 1982, o desempenho de seus estudantes foi tão alto que os examinadores solicitaram nova prova, e eles foram novamente aprovados.',
+'A história foi levada ao cinema em Stand and Deliver (1988). Escalante morreu em 2010. É lembrado como exemplo de que expectativas elevadas, combinadas com apoio e dedicação do professor, podem transformar trajetórias.'],
+'Septima Clark': [
+'Septima Poinsette Clark nasceu em Charleston, na Carolina do Sul, em 1898. Filha de um ex-escravizado e de uma mulher nascida livre, tornou-se professora em escolas para crianças negras em uma época de segregação racial, com salários inferiores aos de colegas brancos.',
+'Em 1956, foi demitida do magistério depois de se recusar a abandonar a NAACP, organização de defesa de direitos civis. Passou a trabalhar na Highlander Folk School, no Tennessee, e ajudou a criar, nas Ilhas Sea, as Escolas de Cidadania, que ensinavam adultos a ler e a escrever para que pudessem se registrar como eleitores. A primeira professora foi Bernice Robinson, que não era docente de formação, e o método respeitava o vocabulário e as necessidades dos participantes.',
+'O programa foi ampliado pela Conferência de Liderança Cristã do Sul e formou milhares de pessoas. Clark morreu em 1987. É lembrada como uma das principais figuras do movimento pelos direitos civis e como exemplo da educação de adultos como instrumento de cidadania.'],
+'Mary McLeod Bethune': [
+'Mary McLeod Bethune nasceu em 1875, em Mayesville, na Carolina do Sul, filha de pais que haviam sido escravizados. Foi uma das poucas crianças da família a frequentar a escola, o que a levou a estudar em uma missão e, mais tarde, a se tornar professora.',
+'Em 1904, fundou em Daytona, na Flórida, uma escola para meninas negras, com recursos mínimos e apoio da comunidade. A instituição cresceu, uniu-se à Cookman Institute e deu origem à Bethune-Cookman University. Em 1935, fundou o Conselho Nacional de Mulheres Negras e, no governo de Franklin Roosevelt, atuou na Administração Nacional da Juventude, ocupando um dos mais altos cargos públicos já ocupados por uma mulher negra até então.',
+'Morreu em 1955. Defendia que a educação deveria dar aos estudantes dignidade, autoconfiança e preparo para a participação social. Sua trajetória é referência da luta por acesso à escola para a população negra nos Estados Unidos.'],
+'Nísia Floresta': [
+'Dionísia Gonçalves Pinto nasceu em 1810, em Papari, no Rio Grande do Norte, e adotou o nome literário Nísia Floresta Brasileira Augusta. Casou-se muito jovem, separou-se e dedicou-se à escrita e ao magistério, em um tempo em que o acesso das mulheres à instrução formal era muito restrito.',
+'Publicou em 1832 Direitos das Mulheres e Injustiça dos Homens, uma adaptação livre de um texto da inglesa Mary Wollstonecraft, considerado um dos primeiros escritos feministas do país. Fundou no Rio de Janeiro, em 1838, o Colégio Augusto, em que meninas estudavam, além de prendas, línguas, ciências, história e geografia, o que causou estranhamento na sociedade da época.',
+'A partir de 1849, morou na Europa, onde publicou livros, manteve contato com intelectuais, entre eles Auguste Comte, e morreu em Rouen, na França, em 1885. É lembrada como pioneira na defesa do direito das mulheres à educação e à vida intelectual no Brasil.'],
+'Rubem Alves': [
+'Rubem Azevedo Alves nasceu em 1933, em Boa Esperança, Minas Gerais. Foi pastor presbiteriano, doutorou-se em Teologia no Seminário de Princeton e, mais tarde, formou-se também em psicanálise. Tornou-se professor da Universidade Estadual de Campinas, na área de filosofia da educação.',
+'Escreveu livros e crônicas voltados a quem ensina, como Conversas com Quem Gosta de Ensinar (1980) e A Alegria de Ensinar (1994). Defendia uma educação que desperte o desejo de aprender, usando metáforas como a do professor que apresenta ao estudante o prazer de uma boa refeição, em vez de apenas recitar a receita. Valorizava a escuta, a poesia, a curiosidade e a liberdade, e criticava a redução do ensino a sequências de conteúdos sem sentido.',
+'Também se encantou com experiências de escola como a da Ponte, em Portugal, e as descreveu em seus textos. Morreu em Campinas, em 2014. Sua escrita sensível continua sendo lida por professores que procuram motivação e uma visão afetuosa da docência.'],
+'Dermeval Saviani': [
+'Dermeval Saviani nasceu em 1943, em Santo Antônio de Posse, no estado de São Paulo. Formou-se em Filosofia, doutorou-se na Pontifícia Universidade Católica de São Paulo e tornou-se professor titular da Universidade Estadual de Campinas, onde atuou por décadas na pós-graduação em educação.',
+'Formulou a pedagogia histórico-crítica, fundamentada no materialismo histórico, que propõe que a escola tem como função específica a socialização do saber sistematizado, de modo que os filhos das classes trabalhadoras tenham acesso aos conhecimentos mais elaborados da cultura. Em Escola e Democracia (1983), analisou criticamente teorias da educação e defendeu que o domínio dos conteúdos é condição de participação política.',
+'Também escreveu uma extensa História das Ideias Pedagógicas no Brasil (2007) e se dedicou a temas como o Plano Nacional de Educação e a construção de um sistema nacional de educação. Suas ideias são centrais na formação de professores e nos debates sobre currículo e políticas públicas no país.'],
+'Lélia Gonzalez': [
+'Lélia de Almeida Gonzalez nasceu em Belo Horizonte, em 1935, em uma família numerosa, e cresceu no Rio de Janeiro. Formou-se em História, Geografia e Filosofia e atuou como professora em escolas e, depois, na PUC-Rio e em outras universidades, ao mesmo tempo em que se envolvia com o movimento negro e o movimento de mulheres.',
+'Foi uma das fundadoras do Movimento Negro Unificado, em 1978, e propôs o conceito de amefricanidade, que reconhece as raízes africanas e indígenas da experiência cultural da América. Em textos como Racismo e Sexismo na Cultura Brasileira (1984), analisou a posição das mulheres negras na sociedade e valorizou o "pretuguês", a marca das línguas africanas na fala brasileira.',
+'Candidatou-se a cargos públicos e participou de debates na Assembleia Constituinte. Morreu em 1994. Sua obra, muito redescoberta nas últimas décadas, é referência para educadores que trabalham com relações étnico-raciais, linguagem e identidade.'],
+'Augusto Boal': [
+'Augusto Boal nasceu no Rio de Janeiro, em 1931. Formou-se em engenharia química, estudou teatro na Universidade de Columbia, em Nova York, e em 1956 passou a integrar o Teatro de Arena de São Paulo, grupo que renovou a dramaturgia brasileira.',
+'Na década de 1960 e 1970, desenvolveu o Teatro do Oprimido, um conjunto de técnicas em que o público deixa de ser espectador passivo e participa da cena, ensaiando soluções para problemas reais. O Teatro-Fórum, o Teatro Invisível e o Teatro Legislativo, praticado quando foi vereador no Rio de Janeiro, são algumas de suas formas. A proposta dialoga com a pedagogia de Paulo Freire, e o livro Teatro do Oprimido (1974) a apresenta ao mundo.',
+'Foi preso e exilado durante a ditadura, passando por Argentina, Portugal e França. Voltou ao Brasil na década de 1980 e morreu em 2009. Seus métodos são usados em escolas, comunidades, empresas e serviços públicos de dezenas de países.'],
+'Maxine Greene': [
+'Maxine Greene nasceu em Nova York, em 1917. Estudou no Barnard College e na Universidade de Nova York e tornou-se professora de filosofia da educação no Teachers College da Universidade de Columbia, onde lecionou por décadas e orientou muitas gerações de docentes.',
+'Em obras como A Dialética da Liberdade (1988) e Liberando a Imaginação (1995), defendeu que a imaginação é uma capacidade essencial para perceber que o mundo poderia ser diferente e, portanto, para agir socialmente. Para ela, o contato com as artes abre os sentidos, estimula o diálogo e cria um espaço de liberdade na vida das pessoas. Atuou como filósofa residente no Lincoln Center Institute, em Nova York, e aproximou artistas e escolas.',
+'Morreu em 2014, aos 96 anos. Sua obra influencia a educação estética, a formação docente e as discussões sobre democracia, justiça social e imaginação na escola.'],
+'Nel Noddings': [
+'Nel Noddings nasceu em 1929, nos Estados Unidos. Antes de se tornar acadêmica, lecionou matemática no ensino médio por anos e depois seguiu para a pós-graduação na Universidade Stanford, onde atuou como professora na faculdade de educação.',
+'Em Caring (1984), apresentou a ética do cuidado: uma visão em que a moral parte das relações concretas entre quem cuida e quem é cuidado, e não apenas de regras abstratas. Em The Challenge to Care in Schools (1992), propôs que a escola cultive o cuidado por meio do diálogo, do exemplo, da prática e da confirmação, ajudando estudantes a se tornarem pessoas competentes, atenciosas e amáveis.',
+'Também escreveu sobre felicidade, matemática, educação para a paz e finalidades da escola. Morreu em 2022. Seu trabalho é referência em debates sobre bem-estar, convivência e formação ética de estudantes e professores.'],
+'Edgar Morin': [
+'Edgar Morin, nascido Edgar Nahoum, veio ao mundo em Paris, em 1921, filho de judeus sefarditas. Participou da Resistência francesa durante a Segunda Guerra Mundial e depois seguiu carreira como sociólogo e filósofo, vinculado ao Centro Nacional de Pesquisa Científica da França. Morreu em 2026, aos 104 anos.',
+'Sua obra mais ampla é O Método, em seis volumes, em que propõe o pensamento complexo: uma forma de conhecer que liga o que as disciplinas separam e aceita incertezas, contradições e processos. Na educação, escreveu A Cabeça Bem-Feita (1999) e Os Sete Saberes Necessários à Educação do Futuro (2000), a pedido da UNESCO, com temas como o erro e a ilusão, a condição humana, a compreensão e a ética do gênero humano.',
+'Visitou o Brasil muitas vezes, e suas ideias influenciaram propostas de interdisciplinaridade, de currículo integrado e de educação para a sustentabilidade. É considerado um dos pensadores mais citados em debates sobre reforma do pensamento e do ensino.'],
+'Mitchel Resnick': [
+'Mitchel Resnick nasceu em 1956, nos Estados Unidos. Estudou física na Universidade de Princeton e fez o doutorado em ciência da computação no MIT, onde foi orientado por Seymour Papert. Tornou-se professor no Media Lab do MIT e liderou o grupo Lifelong Kindergarten.',
+'Sua equipe criou, em 2007, o Scratch, linguagem de programação em blocos que permite a crianças e jovens criar histórias, jogos e animações, e compartilhá-los em uma comunidade online. Em Jardim de Infância para a Vida Toda (2017), propõe quatro pilares da aprendizagem criativa, os 4 Ps: projetos, paixão, pares e pensar brincando. O Computer Clubhouse, outra iniciativa, levou espaços de criação com tecnologia a comunidades de baixa renda.',
+'Resnick segue em atividade e é uma das principais vozes sobre cultura digital e criatividade na educação. O Scratch é usado por milhões de pessoas em dezenas de línguas, em escolas, clubes e casas.'],
+'Anne Sullivan': [
+'Johanna Mansfield Sullivan Macy, conhecida como Anne Sullivan, nasceu em Feeding Hills, em Massachusetts, em 1866, filha de imigrantes irlandeses. Teve uma infância difícil, perdeu boa parte da visão por causa do tracoma e foi enviada a um asilo antes de conseguir uma vaga na Escola Perkins para Cegos, onde se destacou e se formou como oradora da turma, em 1886.',
+'Em 1887, foi contratada para ensinar Helen Keller, então com seis anos, que havia ficado surda e cega por doença na primeira infância. Sullivan usou a soletração manual na palma da mão e conectou as palavras às coisas e às experiências. Em um episódio célebre, ao lado de uma bomba de água, Helen compreendeu que os sinais tinham significado, e a partir daí seu aprendizado de linguagem avançou rapidamente.',
+'Acompanhou Helen durante a escola, a universidade e a vida pública. Morreu em 1936. É lembrada como símbolo da mediação paciente e criativa, e como pioneira da educação de pessoas com deficiência sensorial.'],
+'Louis Braille': [
+'Louis Braille nasceu em 1809, em Coupvray, na França, filho de um seleiro. Aos três anos, feriu um olho na oficina do pai e a infecção se espalhou, deixando-o cego. Aos dez anos, conseguiu uma vaga no Instituto Real para Jovens Cegos, em Paris, onde se destacou como estudante e músico.',
+'Interessou-se por um sistema de escrita noturna criado pelo militar Charles Barbier, que usava pontos em relevo, mas era complexo. Aos quinze anos, Braille o simplificou para uma cela de seis pontos, cujas combinações representam letras, números e notações musicais. Publicou o método em 1829 e depois o ampliou. Tornou-se professor no mesmo instituto.',
+'Morreu em 1852, de tuberculose. Dois anos depois, o sistema foi adotado oficialmente no instituto. Hoje, o braille é usado em todo o mundo, com adaptações a quase todos os idiomas, e permanece como instrumento fundamental de autonomia, de acesso à leitura e de inclusão de pessoas cegas.'],
+'Henri Wallon': [
+'Henri Wallon nasceu em Paris, em 1879. Estudou filosofia e medicina e atuou como médico na Primeira Guerra Mundial. Depois, trabalhou com crianças com deficiência e dedicou-se à psicologia da infância. Tornou-se professor na Sorbonne e, mais tarde, no Collège de France.',
+'Sua teoria propõe estudar a criança de modo integral, em três dimensões que se entrelaçam: a afetiva, a cognitiva e a motora. Para ele, as emoções são sociais e têm papel importante no desenvolvimento da inteligência. Descreveu estágios, como o impulsivo-emocional, o sensório-motor e projetivo, o personalismo e o categorial, que não seguem uma linha reta, mas alternam crises e conquistas. O meio e as relações com outras pessoas são decisivos.',
+'Integrou a Resistência durante a ocupação nazista e, em 1947, coordenou com Paul Langevin o Plano Langevin-Wallon, uma proposta de reforma do ensino francês baseada em justiça social. Morreu em 1962. Suas ideias são muito valorizadas na formação de professores, especialmente no Brasil.'],
+'Ana Mae Barbosa': [
+'Ana Mae Barbosa é educadora e pesquisadora brasileira, nascida em 1936. Sua trajetória esteve ligada à arte-educação e ao contato com as ideias de Paulo Freire no Recife. Fez pós-graduação nos Estados Unidos e tornou-se professora da Universidade de São Paulo.',
+'Foi diretora do Museu de Arte Contemporânea da USP e sistematizou a Abordagem Triangular, uma proposta de ensino de arte que articula três ações: fazer arte, ler imagens e obras, e contextualizá-las histórica e culturalmente. Em livros como A Imagem no Ensino da Arte (1991) e Arte-Educação: Conflitos e Acertos (1984), defende que a arte seja compreendida como conhecimento e como direito de todas as pessoas.',
+'Atuou em associações nacionais e internacionais de educação pela arte e influenciou documentos curriculares brasileiros. Sua proposta é referência para docentes de artes, museus e projetos culturais que desejam aproximar a experiência estética da compreensão crítica.'],
+'Ubiratan D\'Ambrosio': [
+'Ubiratan D\'Ambrosio nasceu em São Paulo, em 1932. Formou-se em Matemática na Universidade de São Paulo e fez o doutorado na Universidade Brown, nos Estados Unidos. Foi professor na Universidade Estadual de Campinas e atuou em vários países, ajudando a consolidar a pesquisa em educação matemática.',
+'Na década de 1970, passou a formular o Programa Etnomatemática, que estuda as maneiras como diferentes grupos culturais, como povos indígenas, trabalhadores, comunidades urbanas e rurais, criam, organizam e usam práticas matemáticas. A palavra reúne ticas (técnicas), matema (explicar, conhecer) e etno (contexto cultural). Em obras como Etnomatemática: elo entre as tradições e a modernidade (2001), defende uma matemática mais humana, ligada à vida, à paz e à ética.',
+'Foi presidente de sociedades científicas e conselheiro de organismos internacionais. Morreu em 2021. Seu trabalho inspira práticas de ensino que valorizam saberes locais e relacionam a matemática à história, à cultura e à cidadania.'],
+'Gloria Ladson-Billings': [
+'Gloria Ladson-Billings nasceu em 1947, nos Estados Unidos. Formou-se em educação e doutorou-se em Stanford. Foi professora na Universidade de Wisconsin-Madison por muitos anos e presidiu a Associação Americana de Pesquisa Educacional, entre 2005 e 2006.',
+'Em The Dreamkeepers (1994), estudou professoras e professores bem-sucedidos com estudantes negros e identificou práticas comuns. A partir disso, formulou a pedagogia culturalmente relevante, apoiada em três pilares: o sucesso acadêmico de todos os estudantes, a competência cultural, que valoriza a cultura de origem sem abrir mão do acesso a outras, e a consciência crítica sobre as desigualdades. Com William Tate, ajudou a levar a teoria racial crítica para os estudos em educação.',
+'Em 2006, propôs falar de uma "dívida educacional" em vez de apenas "lacuna de desempenho", chamando atenção para o acúmulo histórico de oportunidades desiguais. Seu trabalho é muito citado em formação docente, currículo e políticas de equidade.'],
+'Nilma Lino Gomes': [
+'Nilma Lino Gomes nasceu em Belo Horizonte, em 1961. Formou-se em Pedagogia, atuou como professora da educação básica e doutorou-se em Antropologia Social na Universidade de São Paulo. Tornou-se professora da Universidade Federal de Minas Gerais, onde coordenou núcleos de pesquisa sobre relações étnico-raciais.',
+'Estudou o papel do movimento negro como produtor e sistematizador de saberes que educam a sociedade, tema de O Movimento Negro Educador (2017), e investigou identidade, corpo e cabelo em Sem Perder a Raiz (2006). Contribuiu para a aplicação da Lei 10.639, de 2003, que tornou obrigatório o ensino de História e Cultura Afro-Brasileira, e para a formação docente com perspectiva antirracista.',
+'Foi reitora pro tempore da Universidade da Integração Internacional da Lusofonia Afro-Brasileira (Unilab), a primeira mulher negra a dirigir uma universidade pública federal no país, e ministra das Mulheres, da Igualdade Racial, da Juventude e dos Direitos Humanos, em 2015 e 2016. Segue atuante como pesquisadora e referência da educação antirracista.'],
+'Reuven Feuerstein': [
+'Reuven Feuerstein nasceu em 1921, em Botoșani, na Romênia. Sobreviveu ao Holocausto, que marcou sua vida e seu trabalho, e emigrou para a Palestina, que mais tarde se tornou Israel. Estudou psicologia em Genebra, com Jean Piaget e André Rey, e foi professor em Israel.',
+'Trabalhou com crianças e adolescentes sobreviventes da guerra e imigrantes do norte da África, que eram considerados com baixa capacidade em testes tradicionais. Contrariando essa visão, formulou a teoria da modificabilidade cognitiva estrutural, segundo a qual a inteligência pode ser desenvolvida em qualquer idade. Criou o Programa de Enriquecimento Instrumental e a Avaliação Dinâmica do Potencial de Aprendizagem, que observam como a pessoa aprende com ajuda.',
+'Sua noção central é a de experiência de aprendizagem mediada: um adulto ou colega que seleciona, organiza e dá sentido aos estímulos, com intencionalidade e atenção ao significado. Fundou o centro de pesquisa que leva seu nome, em Jerusalém, e morreu em 2014. Suas ideias influenciam a educação inclusiva e a psicopedagogia.'],
+};
+var META = {
+'Paulo Freire': [['Brasil'], ['Pedagogia crítica e libertadora', 'Educação popular e políticas públicas', 'Linguagem, leitura e escrita']],
+'Maria Montessori': [['Europa'], ['Infância e educação infantil', 'Liberdade, autonomia e autogestão']],
+'John Dewey': [['América do Norte'], ['Escola Nova e aprendizagem pela experiência']],
+'Lev Vygotsky': [['Europa'], ['Desenvolvimento, cognição e mediação']],
+'Jean Piaget': [['Europa'], ['Desenvolvimento, cognição e mediação']],
+'Anísio Teixeira': [['Brasil'], ['Escola Nova e aprendizagem pela experiência', 'Educação popular e políticas públicas']],
+'Célestin Freinet': [['Europa'], ['Escola Nova e aprendizagem pela experiência', 'Educação popular e políticas públicas']],
+'Loris Malaguzzi': [['Europa'], ['Infância e educação infantil', 'Arte, criatividade e imaginação']],
+'bell hooks': [['América do Norte'], ['Pedagogia crítica e libertadora', 'Inclusão, equidade e direitos']],
+'A. S. Neill': [['Europa'], ['Liberdade, autonomia e autogestão']],
+'Ivan Illich': [['Europa', 'América Latina'], ['Pedagogia crítica e libertadora', 'Liberdade, autonomia e autogestão']],
+'Henry Giroux': [['América do Norte'], ['Pedagogia crítica e libertadora']],
+'Darcy Ribeiro': [['Brasil'], ['Educação popular e políticas públicas', 'Pedagogia crítica e libertadora']],
+'Magda Soares': [['Brasil'], ['Linguagem, leitura e escrita']],
+'Emilia Ferreiro': [['América Latina'], ['Linguagem, leitura e escrita', 'Desenvolvimento, cognição e mediação']],
+'Seymour Papert': [['América do Norte'], ['Tecnologia e cultura digital', 'Desenvolvimento, cognição e mediação']],
+'Jerome Bruner': [['América do Norte'], ['Desenvolvimento, cognição e mediação']],
+'Howard Gardner': [['América do Norte'], ['Desenvolvimento, cognição e mediação']],
+'Janusz Korczak': [['Europa'], ['Infância e educação infantil', 'Ética e cuidado', 'Inclusão, equidade e direitos']],
+'Johann Pestalozzi': [['Europa'], ['Infância e educação infantil', 'Ética e cuidado']],
+'Friedrich Fröbel': [['Europa'], ['Infância e educação infantil']],
+'Jean-Jacques Rousseau': [['Europa'], ['Liberdade, autonomia e autogestão', 'Infância e educação infantil']],
+'Ovide Decroly': [['Europa'], ['Escola Nova e aprendizagem pela experiência', 'Infância e educação infantil']],
+'Francisco Ferrer i Guàrdia': [['Europa'], ['Liberdade, autonomia e autogestão', 'Educação popular e políticas públicas']],
+'Lorenzo Milani': [['Europa'], ['Educação popular e políticas públicas', 'Pedagogia crítica e libertadora', 'Inclusão, equidade e direitos']],
+'Gianni Rodari': [['Europa'], ['Arte, criatividade e imaginação', 'Linguagem, leitura e escrita']],
+'Rabindranath Tagore': [['Ásia e Oriente Médio'], ['Arte, criatividade e imaginação', 'Liberdade, autonomia e autogestão']],
+'Mahatma Gandhi': [['Ásia e Oriente Médio'], ['Educação popular e políticas públicas', 'Ética e cuidado']],
+'Sugata Mitra': [['Ásia e Oriente Médio', 'Europa'], ['Tecnologia e cultura digital', 'Liberdade, autonomia e autogestão']],
+'Ken Robinson': [['Europa'], ['Arte, criatividade e imaginação']],
+'Jaime Escalante': [['América do Norte', 'América Latina'], ['Ciências, matemática e complexidade', 'Inclusão, equidade e direitos']],
+'Septima Clark': [['América do Norte'], ['Educação popular e políticas públicas', 'Inclusão, equidade e direitos']],
+'Mary McLeod Bethune': [['América do Norte'], ['Inclusão, equidade e direitos', 'Educação popular e políticas públicas']],
+'Nísia Floresta': [['Brasil'], ['Inclusão, equidade e direitos', 'Educação popular e políticas públicas']],
+'Rubem Alves': [['Brasil'], ['Liberdade, autonomia e autogestão', 'Arte, criatividade e imaginação']],
+'Dermeval Saviani': [['Brasil'], ['Pedagogia crítica e libertadora', 'Educação popular e políticas públicas']],
+'Lélia Gonzalez': [['Brasil'], ['Inclusão, equidade e direitos', 'Pedagogia crítica e libertadora']],
+'Augusto Boal': [['Brasil'], ['Arte, criatividade e imaginação', 'Pedagogia crítica e libertadora']],
+'Maxine Greene': [['América do Norte'], ['Arte, criatividade e imaginação', 'Pedagogia crítica e libertadora']],
+'Nel Noddings': [['América do Norte'], ['Ética e cuidado']],
+'Edgar Morin': [['Europa'], ['Ciências, matemática e complexidade']],
+'Mitchel Resnick': [['América do Norte'], ['Tecnologia e cultura digital', 'Arte, criatividade e imaginação']],
+'Anne Sullivan': [['América do Norte'], ['Inclusão, equidade e direitos', 'Linguagem, leitura e escrita']],
+'Louis Braille': [['Europa'], ['Inclusão, equidade e direitos', 'Linguagem, leitura e escrita']],
+'Henri Wallon': [['Europa'], ['Desenvolvimento, cognição e mediação', 'Ética e cuidado']],
+'Ana Mae Barbosa': [['Brasil'], ['Arte, criatividade e imaginação']],
+'Ubiratan D\'Ambrosio': [['Brasil'], ['Ciências, matemática e complexidade', 'Inclusão, equidade e direitos']],
+'Gloria Ladson-Billings': [['América do Norte'], ['Inclusão, equidade e direitos', 'Pedagogia crítica e libertadora']],
+'Nilma Lino Gomes': [['Brasil'], ['Inclusão, equidade e direitos', 'Educação popular e políticas públicas']],
+'Reuven Feuerstein': [['Europa', 'Ásia e Oriente Médio'], ['Desenvolvimento, cognição e mediação', 'Inclusão, equidade e direitos']],
+};
+for (var k in BIOS2) BIOS[k] = BIOS2[k];
+function bandNasc(anos) {
+  var y = parseInt((anos.match(/\d{4}/) || ['0'])[0], 10);
+  return y < 1800 ? 'Nascidos até 1799' : (y < 1900 ? 'Nascidos de 1800 a 1899' : (y < 1950 ? 'Nascidos de 1900 a 1949' : 'Nascidos a partir de 1950'));
+}
+EDUCATORS.forEach(function (e) {
+  e.bio = BIOS[e.n] || [];
+  var m = META[e.n] || [[], []];
+  e.regioes = m[0]; e.eixos = m[1]; e.epoca = bandNasc(e.anos);
+});
+
+
+/* Cada opção soma pesos às dimensões */
+var QUESTIONS = [
+  { q: 'Primeira aula do ano com uma turma nova. O que você faz primeiro?', o: [
+    ['Pergunto o que os estudantes sabem, sonham e vivem fora da escola, e planejo a partir disso.', { A: 1, S: 1, C: 1 }],
+    ['Proponho um desafio prático para resolverem em grupo, antes de qualquer explicação.', { P: 2, C: 1 }],
+    ['Apresento com clareza os combinados da turma e a sequência do que vamos aprender.', { M: 2, A: -1 }],
+    ['Convido todos a criar algo juntos, como um desenho, um poema ou uma pequena cena.', { E: 2, I: 1 }]
+  ] },
+  { q: 'Um estudante errou a resposta. O que mais importa nesse momento?', o: [
+    ['Entender a lógica por trás do erro, porque ele mostra como a pessoa pensa.', { T: 1, M: 1, A: 1 }],
+    ['Acolher, para que o erro não vire vergonha nem medo de tentar de novo.', { I: 2, E: 1 }],
+    ['Transformar o erro em hipótese e testar outro caminho.', { T: 2, P: 1 }],
+    ['Levar o erro para a turma, para que todos aprendam juntos com ele.', { C: 2, S: 1 }]
+  ] },
+  { q: 'Qual é o papel ideal de quem ensina?', o: [
+    ['Preparar o ambiente e se afastar, para que cada estudante conduza o próprio caminho.', { A: 2, M: -1 }],
+    ['Dialogar com a realidade dos estudantes e provocar a consciência crítica.', { S: 2, C: 1 }],
+    ['Oferecer apoio na medida certa e retirá-lo aos poucos, conforme a pessoa avança.', { M: 2, I: 1 }],
+    ['Investigar junto, sem fingir que sabe tudo.', { T: 1, P: 1, A: 1 }]
+  ] },
+  { q: 'Qual espaço combina mais com o seu jeito de aprender?', o: [
+    ['Um ateliê ou oficina, com materiais à mão e projetos em andamento.', { P: 2, E: 1 }],
+    ['Uma roda de conversa, com cadeiras em círculo e a palavra circulando.', { C: 2, S: 1, P: -1 }],
+    ['Um laboratório com ferramentas, circuitos, dados e experimentos.', { T: 2, P: 1 }],
+    ['Uma biblioteca tranquila, onde cada pessoa estuda no próprio ritmo.', { C: -1, P: -1, A: 1 }]
+  ] },
+  { q: 'Para você, a principal função da educação é:', o: [
+    ['Libertar pessoas da opressão e formar quem transforma o mundo.', { S: 2 }],
+    ['Fazer florescer o potencial singular de cada estudante.', { A: 1, I: 1, E: 1 }],
+    ['Garantir a todos o acesso ao conhecimento que a humanidade acumulou.', { M: 1, S: 1, I: 1 }],
+    ['Formar pessoas curiosas, capazes de inventar o que ainda não existe.', { E: 1, T: 1, A: 1 }]
+  ] },
+  { q: 'Em um cenário ideal, como você prefere avaliar?', o: [
+    ['Observando processos e reunindo portfólios que mostram a evolução de cada pessoa.', { A: 1, I: 1, M: -1 }],
+    ['Com critérios claros, que cada estudante conhece de antemão.', { M: 2 }],
+    ['Olhando o que o grupo produz e transforma na realidade, e não só provas individuais.', { C: 1, P: 1, S: 1 }],
+    ['Valorizando tentar, testar e refazer até funcionar.', { P: 2, T: 1 }]
+  ] },
+  { q: 'O que você pensa sobre tecnologia na educação?', o: [
+    ['É uma ferramenta poderosa para criar, programar e construir projetos próprios.', { T: 2, P: 1 }],
+    ['É útil, mas nunca substitui a presença e o afeto entre as pessoas.', { I: 1, E: 1, T: -2 }],
+    ['Deve servir à democratização do acesso e à justiça social.', { S: 1, T: 1, I: 1 }],
+    ['Pode libertar estudantes dos limites da sala, se eles explorarem por conta própria.', { A: 2, T: 1 }]
+  ] },
+  { q: 'Quanta liberdade um estudante deve ter?', o: [
+    ['A máxima possível: decide o que, quando e com quem aprender.', { A: 2, M: -2 }],
+    ['Liberdade com responsabilidade coletiva, combinada em assembleia.', { A: 1, C: 2 }],
+    ['Liberdade dentro de um ambiente preparado, com limites claros e escolhas reais.', { A: 1, M: 1 }],
+    ['A que se conquista ao aprender a ler o mundo e a questioná-lo.', { S: 2, A: 1 }]
+  ] },
+  { q: 'Como você lida com a diversidade de uma turma?', o: [
+    ['Coloco raça, gênero, classe e cultura no centro do currículo.', { S: 2, I: 1 }],
+    ['Adapto estratégias para que cada pessoa aprenda, inclusive quem tem deficiência ou dificuldades específicas.', { I: 2, M: 1 }],
+    ['Monto projetos em que cada talento contribui de um jeito.', { C: 1, P: 1, E: 1 }],
+    ['Dou tempo e espaço para cada um seguir o seu ritmo e o seu interesse.', { A: 2, C: -1 }]
+  ] },
+  { q: 'Qual destas atividades você mais gostaria de liderar?', o: [
+    ['Um teatro-fórum sobre um problema real da comunidade.', { S: 1, E: 2 }],
+    ['Um jornal da turma, com textos livres e cartas trocadas com outras escolas.', { C: 1, P: 1, A: 1 }],
+    ['Uma feira com robôs e protótipos criados pelos estudantes.', { T: 2, P: 1 }],
+    ['Uma pesquisa sobre a história e a cultura do bairro.', { S: 1, C: 1, P: 1 }]
+  ] },
+  { q: 'Qual destes desafios da educação você considera mais urgente?', o: [
+    ['Ampliar a voz dos estudantes nas decisões sobre o que e como aprendem.', { S: 1, A: 1, M: -1 }],
+    ['Dar mais espaço ao corpo, à emoção e à imaginação no dia a dia da aprendizagem.', { E: 2, I: 1 }],
+    ['Reduzir desigualdades de oportunidade e combater o racismo em toda a sociedade.', { S: 2, I: 1 }],
+    ['Despertar mais a investigação e a curiosidade científica.', { T: 2, P: 1 }]
+  ] },
+  { q: 'Qual deve ser o lugar da arte no currículo?', o: [
+    ['Central: imaginação e criação são o coração do aprender.', { E: 2 }],
+    ['Importante como linguagem para ler criticamente a cultura e o mundo.', { E: 1, S: 1 }],
+    ['Uma entre as muitas linguagens pelas quais o estudante pensa e se expressa.', { E: 1, A: 1, I: 1 }],
+    ['Complementar, sem tirar tempo de linguagens, matemática e ciências.', { E: -1, M: 1, T: 1 }]
+  ] },
+  { q: 'Em um cenário ideal, quem deve ter mais voz na definição do que se ensina?', o: [
+    ['A comunidade escolar em diálogo, a partir da realidade local.', { S: 1, C: 2 }],
+    ['Os próprios estudantes, a partir de suas perguntas e interesses.', { A: 2, C: 1 }],
+    ['Especialistas e professores, com base no melhor conhecimento acumulado.', { M: 2, A: -1 }],
+    ['Um equilíbrio entre os interesses dos estudantes e a orientação cuidadosa de quem ensina.', { A: 1, M: 1, I: 1 }]
+  ] },
+  { q: 'Que experiência mais moldou seu olhar sobre aprender?', o: [
+    ['Construir, desmontar e consertar coisas com as próprias mãos.', { P: 2, T: 1 }],
+    ['Um professor ou uma professora que me enxergou quando ninguém mais enxergava.', { I: 2, E: 1 }],
+    ['Viver ou presenciar uma injustiça e perceber o poder da palavra.', { S: 2, C: 1 }],
+    ['Livros, histórias e brincadeiras em que eu inventava mundos.', { E: 2, A: 1 }]
+  ] },
+  { q: 'Que legado você gostaria de deixar?', o: [
+    ['Uma educação mais democrática, aberta a todas as pessoas.', { S: 1, C: 1, M: 1 }],
+    ['Um método ou uma ferramenta que ajude muita gente a aprender melhor.', { M: 1, T: 1, P: 1 }],
+    ['Pessoas mais livres, felizes e donas de si.', { A: 2, E: 1 }],
+    ['Um mundo em que ninguém fique de fora da aprendizagem por ser quem é.', { I: 2, S: 1 }]
+  ] }
+];
+
+var REFS = [
+  'FREIRE, Paulo. Pedagogia do oprimido. Rio de Janeiro: Paz e Terra (obra escrita em 1968).',
+  'DEWEY, John. Democracia e educação (obra original de 1916).',
+  'VYGOTSKY, Lev S. A formação social da mente. São Paulo: Martins Fontes.',
+  'MONTESSORI, Maria. A mente absorvente (obra original de 1949).',
+  'PAPERT, Seymour. A máquina das crianças: repensando a escola na era da informática. Porto Alegre: Artes Médicas, 1994.',
+  'HOOKS, bell. Ensinando a transgredir: a educação como prática da liberdade. São Paulo: WMF Martins Fontes, 2013.',
+  'TEIXEIRA, Anísio. Educação não é privilégio (obra original de 1957).',
+  'FERREIRO, Emilia; TEBEROSKY, Ana. Psicogênese da língua escrita. Porto Alegre: Artes Médicas, 1985.',
+  'MORIN, Edgar. Os sete saberes necessários à educação do futuro. São Paulo: Cortez; Brasília: UNESCO, 2000.',
+  'BARBOSA, Ana Mae. A imagem no ensino da arte. São Paulo: Perspectiva, 1991.'
+];
+
+/* ---------- Lógica de pontuação ---------- */
+var KEYS = DIMS.map(function (d) { return d.k; });
+
+function colStats(rows) {
+  var mean = [], sd = [];
+  for (var j = 0; j < KEYS.length; j++) {
+    var m = 0; rows.forEach(function (r) { m += r[j]; }); m /= rows.length;
+    var v = 0; rows.forEach(function (r) { v += (r[j] - m) * (r[j] - m); }); v /= rows.length;
+    mean.push(m); sd.push(Math.sqrt(v) || 1);
+  }
+  return { mean: mean, sd: sd };
+}
+
+var EDU_STATS = colStats(EDUCATORS.map(function (e) { return e.v; }));
+var EDU_Z = EDUCATORS.map(function (e) {
+  return e.v.map(function (x, j) { return (x - EDU_STATS.mean[j]) / EDU_STATS.sd[j]; });
+});
+
+/* média e desvio esperados da soma bruta, sob respostas uniformes */
+var USER_STATS = (function () {
+  var mean = KEYS.map(function () { return 0; });
+  var vari = KEYS.map(function () { return 0; });
+  QUESTIONS.forEach(function (q) {
+    KEYS.forEach(function (k, j) {
+      var ws = q.o.map(function (o) { return o[1][k] || 0; });
+      var m = ws.reduce(function (a, b) { return a + b; }, 0) / ws.length;
+      var v = ws.reduce(function (a, b) { return a + (b - m) * (b - m); }, 0) / ws.length;
+      mean[j] += m; vari[j] += v;
+    });
+  });
+  return { mean: mean, sd: vari.map(function (v) { return Math.sqrt(v) || 1; }) };
+})();
+
+function userVector(answers) {
+  var raw = KEYS.map(function () { return 0; });
+  answers.forEach(function (a, qi) {
+    var w = QUESTIONS[qi].o[a][1];
+    KEYS.forEach(function (k, j) { raw[j] += (w[k] || 0); });
+  });
+  return raw.map(function (x, j) { return (x - USER_STATS.mean[j]) / USER_STATS.sd[j]; });
+}
+
+function cosine(a, b) {
+  var d = 0, na = 0, nb = 0;
+  for (var i = 0; i < a.length; i++) { d += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; }
+  if (!na || !nb) return 0;
+  return d / Math.sqrt(na * nb);
+}
+
+function rank(answers) {
+  var z = userVector(answers);
+  var list = EDUCATORS.map(function (e, i) {
+    var c = cosine(z, EDU_Z[i]);
+    return { i: i, cos: c, pct: Math.round(Math.max(0, c) * 100) };
+  });
+  list.sort(function (a, b) { return b.cos - a.cos; });
+  return { z: z, list: list };
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = { DIMS: DIMS, EDUCATORS: EDUCATORS, QUESTIONS: QUESTIONS, REFS: REFS, rank: rank, userVector: userVector, EDU_Z: EDU_Z, cosine: cosine, KEYS: KEYS };
+}
+
+
+(function () {
+  function $(s) { return document.querySelector(s); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  var VIEWS = ['intro', 'quiz', 'result', 'catalog'];
+  var state = { i: 0, answers: [], prev: 'intro', nome: '', last: null };
+  var lock = false;
+
+  function show(v) {
+    VIEWS.forEach(function (x) { $('#v-' + x).hidden = (x !== v); });
+    $('#refs').hidden = (v === 'quiz');
+    window.scrollTo(0, 0);
+    var h = $('#v-' + v + ' [data-focus]');
+    if (h) { try { h.focus({ preventScroll: true }); } catch (e) { h.focus(); } }
+  }
+
+  /* ---------- Quiz ---------- */
+  function renderQ() {
+    var q = QUESTIONS[state.i];
+    $('#qnum').textContent = 'Questão ' + (state.i + 1) + ' de ' + QUESTIONS.length;
+    var rul = $('#ruler'); rul.innerHTML = '';
+    for (var k = 0; k < QUESTIONS.length; k++) {
+      var li = document.createElement('li');
+      li.className = k < state.i ? 'done' : (k === state.i ? 'now' : '');
+      rul.appendChild(li);
+    }
+    $('#qtext').textContent = q.q;
+    var box = $('#opts'); box.innerHTML = '';
+    q.o.forEach(function (o, idx) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'opt' + (state.answers[state.i] === idx ? ' sel' : '');
+      b.innerHTML = '<span class="opt-l">' + 'abcd'.charAt(idx) + '</span><span class="opt-t"></span>';
+      b.lastChild.textContent = o[0];
+      b.addEventListener('click', function () { choose(idx); });
+      box.appendChild(b);
+    });
+    $('#back').disabled = (state.i === 0);
+  }
+  function choose(idx) {
+    if (lock) return;
+    lock = true;
+    state.answers[state.i] = idx;
+    renderQ();
+    setTimeout(function () {
+      lock = false;
+      if (state.i < QUESTIONS.length - 1) { state.i++; renderQ(); var h = $('#qtext'); try { h.focus({ preventScroll: true }); } catch (e) {} window.scrollTo(0, 0); }
+      else { finish(); }
+    }, 260);
+  }
+  function back() { if (lock || state.i === 0) return; state.i--; renderQ(); window.scrollTo(0, 0); }
+  function startQuiz() {
+    state.nome = ($('#nome').value || '').trim();
+    state.answers = []; state.i = 0; lock = false;
+    renderQ(); show('quiz');
+  }
+
+  /* ---------- Apoio: retrato, leituras, links ---------- */
+  function ini(n) {
+    var w = n.replace(/[.]/g, '').split(/[\s-]+/).filter(Boolean);
+    return (w[0].charAt(0) + w[w.length - 1].charAt(0)).toUpperCase();
+  }
+  function bioHtml(e) { return e.bio.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join(''); }
+  function chipsHtml(e) { return '<span class="tags">' + e.eixos.map(function (x) { return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</span>'; }
+  function readingsHtml(e) {
+    var items = [e.start].concat(e.leituras || []);
+    return '<ul class="obras">' + items.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+  }
+
+  /* ---------- Resultado ---------- */
+  function level(x) { return x > 0.5 ? 'marcante' : (x < -0.5 ? 'discreto' : 'equilibrado'); }
+  function clip(x) { return Math.max(-2, Math.min(2, x)); }
+
+  function radar(z, ez, nomeEd) {
+    var cx = 190, cy = 172, R = 105, n = DIMS.length;
+    function pt(i, v) {
+      var a = (-90 + i * 360 / n) * Math.PI / 180, r = R * (v + 2) / 4;
+      return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+    }
+    var s = '<svg class="chart" viewBox="0 0 380 340" role="img" aria-label="Gráfico de radar comparando seu perfil com o de ' + esc(nomeEd) + ' nas oito dimensões">';
+    [-1, 0, 1, 2].forEach(function (v) {
+      var pts = []; for (var i = 0; i < n; i++) pts.push(pt(i, v).map(function (c) { return c.toFixed(1); }).join(','));
+      s += '<polygon class="ring' + (v === 0 ? ' mid' : '') + '" points="' + pts.join(' ') + '"/>';
+    });
+    for (var i = 0; i < n; i++) {
+      var o = pt(i, 2);
+      s += '<line class="axis" x1="' + cx + '" y1="' + cy + '" x2="' + o[0].toFixed(1) + '" y2="' + o[1].toFixed(1) + '"/>';
+      var a = (-90 + i * 360 / n) * Math.PI / 180, c = Math.cos(a), sn = Math.sin(a);
+      var lx = cx + (R + 14) * c, ly = cy + (R + 14) * sn;
+      var anc = c > 0.3 ? 'start' : (c < -0.3 ? 'end' : 'middle');
+      var dy = sn > 0.3 ? 12 : (sn < -0.3 ? -3 : 4);
+      s += '<text class="rl" x="' + lx.toFixed(1) + '" y="' + (ly + dy).toFixed(1) + '" text-anchor="' + anc + '">' + esc(DIMS[i].curto) + '</text>';
+    }
+    s += '<text class="rt" x="' + (cx + 5) + '" y="' + (cy - R / 2 - 3) + '">equilíbrio</text>';
+    function poly(vec, cls) {
+      var pts = vec.map(function (v, i) { return pt(i, clip(v)).map(function (c) { return c.toFixed(1); }).join(','); });
+      return '<polygon class="' + cls + '" points="' + pts.join(' ') + '"/>';
+    }
+    s += poly(ez, 'ed') + poly(z, 'me');
+    z.forEach(function (v, i) { var p = pt(i, clip(v)); s += '<circle class="mp" cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5"/>'; });
+    return s + '</svg>';
+  }
+
+  function reasons(z, ez, e) {
+    var com = [];
+    z.forEach(function (v, j) {
+      if (v * ez[j] > 0) com.push({ j: j, w: Math.min(Math.abs(v), Math.abs(ez[j])), pos: v > 0 });
+    });
+    com.sort(function (a, b) { return b.w - a.w; });
+    var items = com.slice(0, 2).map(function (c) { return MOTIVOS[KEYS[c.j]][c.pos ? 0 : 1]; });
+    var gj = 0, gd = -1;
+    z.forEach(function (v, j) { var d = Math.abs(v - ez[j]); if (d > gd) { gd = d; gj = j; } });
+    var nm = DIMS[gj].nome.toLowerCase();
+    var gap = z[gj] > ez[gj]
+      ? 'Onde vocês se afastam: você dá mais peso a ' + nm + ' do que ' + e.n + '.'
+      : 'Onde vocês se afastam: ' + e.n + ' dá mais peso a ' + nm + ' do que você.';
+    return { items: items, gap: gap };
+  }
+
+  function finish() {
+    var r = rank(state.answers);
+    state.last = r;
+    renderResult(r);
+    show('result');
+  }
+
+  function renderResult(r) {
+    var top = r.list[0], e = EDUCATORS[top.i], ez = EDU_Z[top.i], z = r.z;
+    var why = reasons(z, ez, e);
+    var saud = state.nome ? esc(state.nome) + ', o educador que te inspira é' : 'O educador que te inspira é';
+    var share = (state.nome ? state.nome + ': ' : '') + 'O educador que me inspira é ' + e.n + ' (' + top.pct + '% de afinidade): ' + e.conceito + '.';
+    var h = '';
+    h += '<article class="ficha">';
+    h += '<div class="ficha-head"><span class="label">Ficha do educador</span><span class="label">Nº ' + String(top.i + 1).padStart(2, '0') + ' de ' + EDUCATORS.length + '</span></div>';
+    h += '<p class="label">' + saud + '</p>';
+    h += '<div class="top"><div class="idbox"><div class="retrato" aria-hidden="true"><span>' + ini(e.n) + '</span></div>';
+    h += '<div class="idtxt"><h2 class="nome" tabindex="-1" data-focus>' + esc(e.n) + '</h2>';
+    h += '<p class="meta">' + esc(e.anos) + ' · ' + esc(e.pais) + '</p></div></div>';
+    h += '<div class="stamp" aria-label="Afinidade de ' + top.pct + ' por cento"><b>' + top.pct + '%</b><span>afinidade</span></div></div>';
+    h += '<dl><div><dt>Ideia central</dt><dd class="conc">' + esc(e.conceito) + '</dd></div>';
+    h += '<div><dt>O que revolucionou</dt><dd>' + esc(e.resumo) + '</dd></div>';
+    h += '<div><dt>Biografia</dt><dd class="bio">' + bioHtml(e) + '</dd></div>';
+    h += '<div><dt>Eixos pedagógicos</dt><dd>' + chipsHtml(e) + '</dd></div>';
+    h += '<div><dt>Para ler</dt><dd>' + readingsHtml(e) + '</dd></div></dl>';
+    h += '</article>';
+
+    h += '<section class="sec"><h3>Por que combinamos</h3><ul>';
+    why.items.forEach(function (t) { h += '<li>' + esc(t) + '</li>'; });
+    h += '</ul><p>' + esc(why.gap) + '</p></section>';
+
+    h += '<section class="sec"><h3>Seu perfil, lado a lado</h3>';
+    h += radar(z, ez, e.n);
+    h += '<div class="legend"><span><i></i>Você</span><span><i class="d"></i>' + esc(e.n) + '</span></div>';
+    h += '<p class="note">Cada ponta é uma dimensão. O anel tracejado do meio marca o ponto de equilíbrio entre as pessoas e entre os educadores; quanto mais perto da borda, mais marcante é aquela dimensão.</p>';
+    h += '<details><summary>O que significam as oito dimensões</summary><ul class="dims">';
+    DIMS.forEach(function (d, j) {
+      h += '<li><strong>' + esc(d.nome) + '</strong><span>' + esc(d.def) + '</span><span class="chips"><span class="chip me">Você: ' + level(z[j]) + '</span><span class="chip">' + esc(e.n) + ': ' + level(ez[j]) + '</span></span></li>';
+    });
+    h += '</ul></details></section>';
+
+    h += '<section class="sec"><h3>Outros educadores próximos de você</h3><ul class="near">';
+    r.list.slice(1, 5).forEach(function (x) {
+      var o = EDUCATORS[x.i];
+      h += '<li><b>' + esc(o.n) + '</b><span class="pc">' + x.pct + '%</span><small>' + esc(o.conceito) + ' · ' + esc(o.pais) + '</small></li>';
+    });
+    h += '</ul></section>';
+
+    h += '<section class="sec"><h3>Compartilhar</h3><label class="label" for="share">Texto do seu resultado</label>';
+    h += '<textarea id="share" rows="3" readonly>' + esc(share) + '</textarea><p class="msg" id="msg" aria-live="polite"></p></section>';
+
+    h += '<div class="actions"><button class="btn" type="button" data-act="copy">Copiar resultado</button>';
+    h += '<button class="btn ghost" type="button" data-act="redo">Refazer o teste</button>';
+    h += '<button class="btn ghost" type="button" data-act="cat">Ver os 50 educadores</button></div>';
+    $('#v-result').innerHTML = h;
+  }
+
+  function copyShare() {
+    var ta = $('#share'), msg = $('#msg');
+    function sel() { ta.focus(); ta.select(); msg.textContent = 'Texto selecionado. Copie pelo menu do seu aparelho.'; }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(ta.value).then(function () { msg.textContent = 'Texto copiado.'; }, sel);
+      } else { sel(); }
+    } catch (e) { sel(); }
+  }
+
+  /* ---------- Catálogo ---------- */
+  var ORD = [['ficha', 'Ordem de ficha'], ['az', 'Ordem alfabética'], ['nasc', 'Cronológica, do mais antigo ao mais recente']];
+  function uniq(key) {
+    var s = [];
+    EDUCATORS.forEach(function (e) { [].concat(e[key]).forEach(function (x) { if (s.indexOf(x) === -1) s.push(x); }); });
+    return s;
+  }
+  function fillSelect(id, todos, vals) {
+    $(id).innerHTML = '<option value="">' + todos + '</option>' + vals.map(function (v) { return '<option value="' + esc(v) + '">' + esc(v) + '</option>'; }).join('');
+  }
+  function birth(e) { return parseInt((e.anos.match(/\d{4}/) || ['0'])[0], 10); }
+  function buildCatalog() {
+    fillSelect('#f-eixo', 'Todos os eixos', uniq('eixos').sort(function (a, b) { return a.localeCompare(b, 'pt'); }));
+    fillSelect('#f-reg', 'Todas as regiões', ['Brasil', 'América Latina', 'América do Norte', 'Europa', 'Ásia e Oriente Médio']);
+    fillSelect('#f-ep', 'Todas as épocas', ['Nascidos até 1799', 'Nascidos de 1800 a 1899', 'Nascidos de 1900 a 1949', 'Nascidos a partir de 1950']);
+    $('#f-ord').innerHTML = ORD.map(function (o) { return '<option value="' + o[0] + '">' + o[1] + '</option>'; }).join('');
+    var h = '';
+    EDUCATORS.forEach(function (e, i) {
+      var hay = norm([e.n, e.pais, e.conceito, e.anos, e.eixos.join(' '), e.regioes.join(' '), e.epoca].join(' '));
+      h += '<article class="card" data-i="' + i + '" data-s="' + esc(hay) + '" data-eixos="' + esc(e.eixos.join('|')) + '" data-reg="' + esc(e.regioes.join('|')) + '" data-ep="' + esc(e.epoca) + '">';
+      h += '<span class="label">Ficha ' + String(i + 1).padStart(2, '0') + '</span>';
+      h += '<h3>' + esc(e.n) + '</h3><span class="label" style="text-transform:none">' + esc(e.anos) + ' · ' + esc(e.pais) + '</span>';
+      h += '<p class="cc">' + esc(e.conceito) + '</p>' + chipsHtml(e) + '<p>' + esc(e.resumo) + '</p>';
+      h += '<details class="bio-d"><summary>Ler biografia</summary><div class="bio">' + bioHtml(e) + '</div></details>';
+      h += '<p class="st">Para ler</p>' + readingsHtml(e) + '</article>';
+    });
+    $('#cat-list').innerHTML = h;
+    filterCatalog();
+  }
+  function filterCatalog() {
+    var t = norm($('#busca').value.trim()), fe = $('#f-eixo').value, fr = $('#f-reg').value, fp = $('#f-ep').value, ord = $('#f-ord').value;
+    var list = $('#cat-list'), cards = [].slice.call(list.querySelectorAll('.card')), shown = 0;
+    cards.sort(function (a, b) {
+      var ia = +a.getAttribute('data-i'), ib = +b.getAttribute('data-i');
+      if (ord === 'az') return EDUCATORS[ia].n.localeCompare(EDUCATORS[ib].n, 'pt', { sensitivity: 'base' });
+      if (ord === 'nasc') return (birth(EDUCATORS[ia]) - birth(EDUCATORS[ib])) || (ia - ib);
+      return ia - ib;
+    }).forEach(function (c) { list.appendChild(c); });
+    cards.forEach(function (c) {
+      var hay = c.getAttribute('data-s');
+      var ok = (!t || t.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; })) &&
+        (!fe || c.getAttribute('data-eixos').split('|').indexOf(fe) !== -1) &&
+        (!fr || c.getAttribute('data-reg').split('|').indexOf(fr) !== -1) &&
+        (!fp || c.getAttribute('data-ep') === fp);
+      c.hidden = !ok; if (ok) shown++;
+    });
+    $('#cat-count').textContent = shown === cards.length ? cards.length + ' educadores' : (shown === 0 ? 'Nenhum educador encontrado. Tente limpar os filtros.' : shown + ' de ' + cards.length + ' educadores');
+  }
+  function clearFilters() {
+    $('#busca').value = ''; $('#f-eixo').value = ''; $('#f-reg').value = ''; $('#f-ep').value = ''; $('#f-ord').value = 'ficha';
+    filterCatalog();
+  }
+  function openCatalog(from) { state.prev = from; show('catalog'); }
+
+  /* ---------- Referências ---------- */
+  $('#refs-list').innerHTML = REFS.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('');
+
+  /* ---------- Eventos ---------- */
+  $('#start').addEventListener('click', startQuiz);
+  $('#to-cat').addEventListener('click', function () { openCatalog('intro'); });
+  $('#back').addEventListener('click', back);
+  $('#cat-back').addEventListener('click', function () { show(state.prev); });
+  $('#busca').addEventListener('input', filterCatalog);
+  ['#f-eixo', '#f-reg', '#f-ep', '#f-ord'].forEach(function (s) { $(s).addEventListener('change', filterCatalog); });
+  $('#f-clear').addEventListener('click', clearFilters);
+  $('#nome').addEventListener('keydown', function (ev) { if (ev.key === 'Enter') startQuiz(); });
+  $('#v-result').addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-act]'); if (!b) return;
+    var a = b.getAttribute('data-act');
+    if (a === 'copy') copyShare();
+    else if (a === 'redo') { state.answers = []; state.i = 0; lock = false; renderQ(); show('quiz'); }
+    else if (a === 'cat') openCatalog('result');
+  });
+  document.addEventListener('keydown', function (ev) {
+    if ($('#v-quiz').hidden || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+    var k = ev.key.toLowerCase(), idx = 'abcd'.indexOf(k);
+    if (idx < 0 && /^[1-4]$/.test(k)) idx = parseInt(k, 10) - 1;
+    if (idx >= 0) { choose(idx); }
+    else if (ev.key === 'ArrowLeft') { back(); }
+  });
+
+  buildCatalog();
+  show('intro');
+})();
+</script>
+
+</body>
+</html>
